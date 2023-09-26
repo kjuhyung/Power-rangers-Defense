@@ -36,7 +36,7 @@ public class Spawner : MonoBehaviour
     private void SpawnMonster()
     {
        GameObject monster = GetMonster(Random.Range(0, 3));
-        monster.transform.position = spawnPoint[Random.Range(1, spawnPoint.Length)].position;
+        monster.transform.position = spawnPoint[Random.Range(1, spawnPoint.Length - 1)].position;
     }
 
     private GameObject GetMonster(int index)
