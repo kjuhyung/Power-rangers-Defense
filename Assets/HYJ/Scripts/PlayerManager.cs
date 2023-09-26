@@ -21,14 +21,7 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
-    [SerializeField]
-    private PlayerGold playerGold;
-
-    [SerializeField]
-    private DiaManager diaManager;
-
-    [SerializeField]
-    private PlayerHP playerHP;
+    public GameObject playerManager;
 
     private void Awake()
     {
