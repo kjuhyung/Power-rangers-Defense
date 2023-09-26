@@ -21,8 +21,13 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
+    [SerializeField]
     private PlayerGold playerGold;
+
+    [SerializeField]
     private DiaManager diaManager;
+
+    [SerializeField]
     private PlayerHP playerHP;
 
     private void Awake()
@@ -36,10 +41,7 @@ public class PlayerManager : MonoBehaviour
         instance = this;
         DontDestroyOnLoad(gameObject); // 씬 전환 시 파괴되지 않도록 설정
 
-       
-        playerGold = FindObjectOfType<PlayerGold>();
-        diaManager = FindObjectOfType<DiaManager>();
-        playerHP = FindObjectOfType<PlayerHP>();
+      
     }
 
 
