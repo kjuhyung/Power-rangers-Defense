@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5405297694381079197}
   - component: {fileID: 2497106439925531025}
+  - component: {fileID: 4960918551919525017}
   m_Layer: 0
   m_Name: power-ranger-pink - Idle_0
   m_TagString: Untagged
@@ -84,6 +85,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &4960918551919525017
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3483072308844491449}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1169a5a5313749e45a0eae6c9f73db53, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8632039609345463555
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,9 +115,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1108855372229002457}
-  - component: {fileID: 8240310746479933148}
   - component: {fileID: 7913744849019882945}
   - component: {fileID: 3347456171223868869}
+  - component: {fileID: 8240310746479933148}
   m_Layer: 0
   m_Name: pink
   m_TagString: Untagged
@@ -119,18 +141,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8240310746479933148
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8632039609345463555}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91c5cd10bef06cf4aa24b883d5ea13be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &7913744849019882945
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -190,3 +200,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BTDalphaRanger: {fileID: 8240310746479933148, guid: 22188a31c9f00504fa8f25dc8018d04d, type: 3}
   BTDrealRanger: {fileID: 8240310746479933148}
+--- !u!114 &8240310746479933148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8632039609345463555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91c5cd10bef06cf4aa24b883d5ea13be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

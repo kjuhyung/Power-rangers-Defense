@@ -15,8 +15,13 @@ public class TowerMakeClick : MonoBehaviour
 
     private Vector3 offset;
 
+    private Camera mainCam;
+    private Ray ray;
+    private RaycastHit hit;
+
     void Start()
     {
+        mainCam = Camera.main;
         GOalphaRanger = BTDalphaRanger.gameObject;
         GOrealRanger = BTDrealRanger.gameObject;
 
@@ -26,7 +31,6 @@ public class TowerMakeClick : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Debug.Log("asd");
         if (!isClicked)
         {
             
@@ -56,8 +60,39 @@ public class TowerMakeClick : MonoBehaviour
         {
             isClicked = false;
             // 클릭을 놓았을 때 실제 타워를 생성하고 비표시 프리팹을 삭제합니다.
-            Instantiate(GOrealRanger, nonAlphaRanger.transform.position, Quaternion.identity);
+            CalcMousePos_PlaceTower();
             Destroy(nonAlphaRanger);
         }
     }
+
+    public void TowerSpawn(Transform tileTransform)
+    {
+        Tile tile = tileTransform.GetComponent<Tile>();
+
+        if (tile.isBuiltTower == true)
+        {
+            return;
+        }
+        tile.isBuiltTower = true;
+
+        Instantiate(GOrealRanger, new Vector3(tileTransform.position.x, tileTransform.position.y + 1, 0), Quaternion.identity);
+    }
+
+    public void CalcMousePos_PlaceTower()
+    {
+        ray = mainCam.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+        {
+            if (hit.transform.CompareTag("Tile"))
+            {
+                TowerSpawn(hit.transform);
+            }
+            else
+            {
+                Debug.Log("Nope");
+            }
+        }
+    }
 }
+
