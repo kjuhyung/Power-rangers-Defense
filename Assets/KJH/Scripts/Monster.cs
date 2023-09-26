@@ -97,6 +97,7 @@ public class Monster : MonoBehaviour
         if (other.tag == "Defender")
         {
             IsAttacking = false;
+            CancelInvoke(nameof(MonsterGiveAttack));
         }
         else return;
     }
