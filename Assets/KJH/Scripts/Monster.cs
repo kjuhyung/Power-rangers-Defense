@@ -10,7 +10,7 @@ public class Monster : MonoBehaviour
 
     public float curHealth { get; set; }
     public float maxHealth { get; private set; }
-    public int attackDamage { get; private set; }
+    public float attackDamage { get; private set; }
     private float attackDelay;
     public float moveSpeed { get; set; }
     private int goldPerDeath;
@@ -81,7 +81,7 @@ public class Monster : MonoBehaviour
         {
             IsAttacking = true;
             Debug.Log("타워 충돌");
-            MonsterGiveAttack();
+            InvokeRepeating(nameof(MonsterGiveAttack), 0, attackDelay);
         }
         else if (other.tag == "Earth")
         {
@@ -104,23 +104,26 @@ public class Monster : MonoBehaviour
     private void MonsterGiveAttack()
     {
         // TODO
-        // attack anim
-        // 데미지 주기 + attackDealy 만큼 대기
+        // 데미지 주기
+        _anim.SetTrigger("Attack");        
     }
 
-    public void MosterTakeDamage(int _damage)
+    public void MosterTakeDamage(float _damage)
     {
         curHealth -= _damage;
-
-        // TODO
-        // Hit anim
+        _anim.SetTrigger("Hit");
 
         if (curHealth <= 0)
         {
             // TODO
-            // Death anim
-            // player 골드 증가 (goldperkill)
-            // Destroy - anim event
+            // PlayerGold.currentGold += goldPerDeath;
+            IsDeath = true;
+            _anim.SetTrigger("Death");
         }
+    }
+
+    private void MonsterDestroy()
+    {
+        gameObject.SetActive(false);
     }
 }
