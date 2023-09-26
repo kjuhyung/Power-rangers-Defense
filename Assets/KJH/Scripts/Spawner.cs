@@ -8,6 +8,7 @@ public class Spawner : MonoBehaviour
     private List<GameObject>[] monsterPools;
 
     private Transform[] spawnPoint;
+    [SerializeField] private Transform MonsterPool;
 
     private float spawnTimer;
 
@@ -54,7 +55,7 @@ public class Spawner : MonoBehaviour
 
         if (!selectMonster)
         {
-           selectMonster = Instantiate(monsterPrefabs[index], transform);
+           selectMonster = Instantiate(monsterPrefabs[index], MonsterPool.transform);
             monsterPools[index].Add(selectMonster);
         }
 
