@@ -8,7 +8,7 @@ using TMPro;
 public class PlayerGold : MonoBehaviour
 {
    
-    private int currentGold = 0; // 처음 주어질 골드의 양 
+    public int currentGold = 0; // 처음 주어질 골드의 양 
 
     public TMP_Text goldText;
 
