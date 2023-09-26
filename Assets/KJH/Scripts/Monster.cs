@@ -7,6 +7,7 @@ public class Monster : MonoBehaviour
 
     private Rigidbody2D _rigid;
     private Animator _anim;
+    private PlayerManager _playerManager;
 
     public float curHealth { get; set; }
     public float maxHealth { get; private set; }
@@ -22,6 +23,10 @@ public class Monster : MonoBehaviour
     {
         _rigid = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
+    }
+    private void OnEnable()
+    {
+        _playerManager = PlayerManager.Instance;
     }
 
     private void Start()
@@ -80,21 +85,19 @@ public class Monster : MonoBehaviour
         if (other.tag == "Tower")
         {
             IsAttacking = true;
-            Debug.Log("타워 충돌");
             InvokeRepeating(nameof(MonsterGiveAttack), 0, attackDelay);
         }
         else if (other.tag == "Earth")
         {
-            // TODO
-            // gameObject.SetActive(false);
-            // spawnmanager 에게 반환
-            // 플레이어 피 감소
+            Debug.Log("지구에 닿았다");
+            // _playerManager.playerHP.currentHP -= 1;
+            _anim.SetTrigger("Death");
         }
         else return;            
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.tag == "Defender")
+        if (other.tag == "Tower")
         {
             IsAttacking = false;
             CancelInvoke(nameof(MonsterGiveAttack));
@@ -105,7 +108,7 @@ public class Monster : MonoBehaviour
     private void MonsterGiveAttack()
     {
         // TODO
-        // 데미지 주기
+        // TowerManager.Instance.RedRanger.TowerGetDmg(attackDamage);
         _anim.SetTrigger("Attack");        
     }
 
@@ -117,7 +120,7 @@ public class Monster : MonoBehaviour
         if (curHealth <= 0)
         {
             // TODO
-            // PlayerManager.Instance.currentGold += goldPerDeath;
+            _playerManager.playerGold.AddGold(goldPerDeath);
             IsDeath = true;
             _anim.SetTrigger("Death");
         }
