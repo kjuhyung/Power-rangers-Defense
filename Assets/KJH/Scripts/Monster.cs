@@ -77,7 +77,7 @@ public class Monster : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Defender")
+        if (other.tag == "Tower")
         {
             IsAttacking = true;
             Debug.Log("타워 충돌");
@@ -117,7 +117,7 @@ public class Monster : MonoBehaviour
         if (curHealth <= 0)
         {
             // TODO
-            // PlayerGold.currentGold += goldPerDeath;
+            // PlayerManager.Instance.currentGold += goldPerDeath;
             IsDeath = true;
             _anim.SetTrigger("Death");
         }
