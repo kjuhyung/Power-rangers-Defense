@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7118942804782390170
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5381862253441455419}
+  - component: {fileID: 666826101782148708}
+  - component: {fileID: 1005579196694639796}
+  m_Layer: 0
+  m_Name: TowerManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5381862253441455419
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7118942804782390170}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &666826101782148708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7118942804782390170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 266ae8c89cd20f24b9f776ca203dd966, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  redRanger: {fileID: 2053276505305125004, guid: 1a64acf5b4bebfc498706e45ec121858, type: 3}
+  blueRanger: {fileID: 9218012710488755270, guid: ef69cd575c1b619439cc93823839d4c1, type: 3}
+  blackRanger: {fileID: 484213524821723640, guid: 632c70b2ee755a942be6d9bbde32f5c4, type: 3}
+  greenRanger: {fileID: 300409983109258647, guid: 97141c8d81b40dd4298b2e946b00e7ba, type: 3}
+  pinkRanger: {fileID: 8240310746479933148, guid: 38015b47a49c4ac4988e61335d8f2070, type: 3}
+  rangerList: []
+--- !u!114 &1005579196694639796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7118942804782390170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63031db465c09cc45be68ab5c758853e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BTDalphaRangerList:
+  - {fileID: 2053276505305125004, guid: 579162055e450ed4c9d29228d404c6b8, type: 3}
+  - {fileID: 9218012710488755270, guid: e6ad5b81d9beb8c4c9a7a3f507ca2bdc, type: 3}
+  - {fileID: 300409983109258647, guid: 106e0c5de0077524a8ba55440cf49a79, type: 3}
+  - {fileID: 484213524821723640, guid: e707fba164c9bd24f9535c9e43754616, type: 3}
+  - {fileID: 8240310746479933148, guid: 22188a31c9f00504fa8f25dc8018d04d, type: 3}
