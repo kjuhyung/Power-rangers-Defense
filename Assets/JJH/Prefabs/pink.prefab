@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 8240310746479933148}
   m_Layer: 0
   m_Name: pink
-  m_TagString: Untagged
+  m_TagString: Defender
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,8 +133,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8632039609345463555}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.52, y: 0, z: 0}
-  m_LocalScale: {x: 6, y: 6, z: 6}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5405297694381079197}
@@ -212,3 +212,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91c5cd10bef06cf4aa24b883d5ea13be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Bullets: {fileID: 7924877716056218264, guid: 99ecf86529db279419e384383423d7f3, type: 3}
