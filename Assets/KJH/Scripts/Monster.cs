@@ -41,21 +41,21 @@ public class Monster : MonoBehaviour
                 maxHealth = 200f;
                 attackDamage = 5;
                 attackDelay = 1f;
-                moveSpeed = 20f;
+                moveSpeed = 200f;
                 goldPerDeath = 5;
                 break;
             case MonsterType.Owlet:
                 maxHealth = 300f;
                 attackDamage = 15;
                 attackDelay = 2f;
-                moveSpeed = 10f;
+                moveSpeed = 100f;
                 goldPerDeath = 15;
                 break;
             case MonsterType.Dude:
                 maxHealth = 100f;
                 attackDamage = 10;
                 attackDelay = 0.5f;
-                moveSpeed = 30f;
+                moveSpeed = 300f;
                 goldPerDeath = 10;
                 break;
         }

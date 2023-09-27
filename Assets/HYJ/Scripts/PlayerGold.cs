@@ -14,16 +14,16 @@ public class PlayerGold : MonoBehaviour
 
     void Start()
     {
-        UpdateGoldUI();    
+        currentGold = 1000;
     }
 
     public void AddGold(int amount)
     {
         currentGold += amount; // 몬스터가 죽으면 나올 골드를 더해준다
-        UpdateGoldUI();
+        LateUpdate();
     }
 
-    void UpdateGoldUI()
+    private void LateUpdate()
     {
         goldText.text = currentGold + " G";
     }

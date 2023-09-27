@@ -27,7 +27,7 @@ public class Spawner : MonoBehaviour
     {
         spawnTimer += Time.deltaTime;
 
-        if (spawnTimer > 5f )
+        if (spawnTimer > 0.5f )
         {
             spawnTimer = 0;
             SpawnMonster();

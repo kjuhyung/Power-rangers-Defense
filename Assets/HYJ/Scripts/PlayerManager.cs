@@ -21,7 +21,9 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
-    public GameObject playerManager;
+    public PlayerGold playerGold;
+    public DiaManager diaManager;
+    public  PlayerHP playerHP;
 
     public PlayerGold playerGold;
     public DiaManager diaManager;
@@ -41,7 +43,6 @@ public class PlayerManager : MonoBehaviour
         playerGold = FindObjectOfType<PlayerGold>();
         diaManager = FindObjectOfType<DiaManager>();
         playerHP = FindObjectOfType<PlayerHP>();
-
     }
 
 
