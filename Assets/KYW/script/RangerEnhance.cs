@@ -132,8 +132,8 @@ public abstract class Ranger : MonoBehaviour
     private float baseAttackSpeed;
     private int enhancementLevel;
 
-    private float attackDamageIncrease = 2f; // 임의의 값
-    private float attackSpeedIncrease = 0.1f; // 임의의 값
+    private float attackDamageIncrease = 2f; // 임의 값
+    private float attackSpeedIncrease = 0.1f; // 임의 값
 
     public void Initialize(string name, float attackDamage, float attackSpeed, int level)
     {
