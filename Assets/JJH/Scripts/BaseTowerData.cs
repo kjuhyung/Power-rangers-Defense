@@ -28,7 +28,7 @@ public class BaseTowerData : MonoBehaviour //이거를 붙혀도
         currentHp = _hp;
     }
 
-    public void TowerDamaged(BaseTowerData btd, float monsterAttValue)
+    public void TowerDamaged(float monsterAttValue)
     {
         //todo
         //btd.currentHp -= monsterAttValue;
@@ -46,7 +46,7 @@ public class BaseTowerData : MonoBehaviour //이거를 붙혀도
         Vector2 rayDirection = Vector2.right; // 오른쪽 방향으로 레이 발사
 
         int layer = LayerMask.GetMask("Monster");
-        RaycastHit2D hit = Physics2D.Raycast(rayOrigin, rayDirection, Mathf.Infinity, layer);
+        RaycastHit2D hit = Physics2D.Raycast(rayOrigin, rayDirection, 30f, layer);
 
         if (hit.collider != null)
         {

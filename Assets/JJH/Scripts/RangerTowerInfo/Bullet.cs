@@ -6,8 +6,10 @@ public class Bullet : MonoBehaviour
 {
     public GameObject bullet;
     public BaseTowerData rangerTower;
+    
 
-    Monster monster;
+    
+
     public float bulletSpeed = 10f;
     Rigidbody2D rb;
 
@@ -33,7 +35,11 @@ public class Bullet : MonoBehaviour
         if (other.tag == "Monster")
         {
             //monster.MosterTakeDamage(rangerTower.att);
-            other.gameObject.GetComponent<Monster>().MosterTakeDamage(rangerTower.att);
+            //TODO 불렛 지나간거 destroy해주기
+            
+            //Destroy(bullet);
+            Monster monster = other.gameObject.GetComponent<Monster>();
+            monster.MosterTakeDamage(rangerTower.att);
         }
     }
 }

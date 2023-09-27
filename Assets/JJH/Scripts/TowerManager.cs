@@ -39,7 +39,7 @@ public class TowerManager : MonoBehaviour
     {
         rangerList = new List<GameObject>();
 
-        //                              name, attValue, attDelay, hp, 
+        //                    name, attValue, attDelay, hp, 
         redRanger.RedSetData("RedRanger", 0f, 2f, 10f);
         blueRanger.BlueSetData("BlueRanger", 1f, 3f, 5f, 2f);
         greenRanger.GreenSetData("GreenRanger", 2f, 5f, 4f);
@@ -57,7 +57,7 @@ public class TowerManager : MonoBehaviour
 
     void Start()
     {
-        Vector3 basePos = new Vector3(-16.5f, -8f, 0);
+        Vector3 basePos = new Vector3(-12.5f, -6.5f, 0);
 
         for (int i = 0; i < rangerList.Count; i++)
         {
@@ -70,5 +70,19 @@ public class TowerManager : MonoBehaviour
     void Update()
     {
 
+    }
+
+    public BaseTowerData GetTower(string TowerName) //find tower method
+    {
+        for (int i = 0; i < rangerList.Count; i++)
+        {
+            var go = rangerList[i];
+            var tower = go.GetComponent<BaseTowerData>();
+            if (tower.towerName == TowerName)
+            {
+                return tower;
+            }
+        }
+        return null;
     }
 }

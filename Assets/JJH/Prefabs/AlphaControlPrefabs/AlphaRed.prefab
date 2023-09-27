@@ -32,7 +32,7 @@ Transform:
   m_Children:
   - {fileID: 7396094614475252723}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2053276505305125004
 MonoBehaviour:
@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ef3b31922b2e7247b308e4dd87975a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Bullets: {fileID: 0}
 --- !u!61 &6085958613801637010
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -163,7 +164,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 10
   m_Sprite: {fileID: 854028465, guid: 7e95814901f3db046afdb44c6dcfc679, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.3529412}
   m_FlipX: 0

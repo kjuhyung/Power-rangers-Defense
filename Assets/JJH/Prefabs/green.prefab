@@ -65,7 +65,7 @@ Transform:
   - {fileID: 6756401823242943637}
   - {fileID: 6310409736964155623}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &859390963754851034
 BoxCollider2D:
@@ -139,7 +139,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullets: {fileID: 5911523476125022242, guid: 42f2f512f682e674b9fca2fe1dae414e, type: 3}
-  tower: {fileID: 6929637870487824101}
   bp: {fileID: 2598915851007733721}
 --- !u!1 &8744128287370935665
 GameObject:
@@ -214,7 +213,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 10
   m_Sprite: {fileID: -1688675350, guid: 4de248cf36bc6cc4aaae67a681d6106f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
