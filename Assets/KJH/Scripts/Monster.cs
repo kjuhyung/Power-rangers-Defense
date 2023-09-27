@@ -89,15 +89,14 @@ public class Monster : MonoBehaviour
         }
         else if (other.tag == "Earth")
         {
-            Debug.Log("지구에 닿았다");
-            // _playerManager.playerHP.currentHP -= 1;
             _anim.SetTrigger("Death");
-        }
+            _playerManager.playerHP.MonsterReachedGoal();            
+        }       
         else return;            
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.tag == "Tower")
+        if (other.tag == "Defender")
         {
             IsAttacking = false;
             CancelInvoke(nameof(MonsterGiveAttack));
@@ -119,7 +118,6 @@ public class Monster : MonoBehaviour
 
         if (curHealth <= 0)
         {
-            // TODO
             _playerManager.playerGold.AddGold(goldPerDeath);
             IsDeath = true;
             _anim.SetTrigger("Death");

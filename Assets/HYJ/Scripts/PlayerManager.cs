@@ -23,7 +23,7 @@ public class PlayerManager : MonoBehaviour
 
     public PlayerGold playerGold;
     public DiaManager diaManager;
-    public  PlayerHP playerHP;
+    public PlayerHP playerHP;
 
     private void Awake()
     {
