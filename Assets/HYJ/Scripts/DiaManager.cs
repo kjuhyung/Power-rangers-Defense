@@ -6,7 +6,6 @@ using System;
 
 public class DiaManager : MonoBehaviour
 {
-    public int stageRewardDia = 50; // 스테이지를 깨면 주는 보상 다이아 임의 값 
     public TMP_Text diaText;
 
     public int currentDiamons = 0;// 현재 다이아 양
@@ -17,9 +16,9 @@ public class DiaManager : MonoBehaviour
         UpdateDiaUI();
     }
 
-    public void StageCleared()
+    public void StageCleared(int reward)
     {
-        currentDiamons += stageRewardDia;
+        currentDiamons += reward;
         SaveDiamons();
         UpdateDiaUI();
     }

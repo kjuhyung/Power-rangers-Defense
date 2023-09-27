@@ -1,4 +1,4 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -35,9 +35,9 @@ public class PlayerHP : MonoBehaviour
             UpdateHPUI();
 
         }
-        else if (currentHP == 0)
+        else if (currentHP <= 0)
         {
-           //게임오버 
+            OnGameOver(); //게임오버 이벤트 함수 부르기 
         }
     }
 
@@ -55,5 +55,7 @@ public class PlayerHP : MonoBehaviour
             }
         }
     }
+
+    public event Action OnGameOver = delegate { };
 
 }
