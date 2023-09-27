@@ -82,7 +82,7 @@ public class Monster : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Tower")
+        if (other.tag == "Defender")
         {
             IsAttacking = true;
             InvokeRepeating(nameof(MonsterGiveAttack), 0, attackDelay);

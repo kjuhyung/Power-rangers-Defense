@@ -11,6 +11,8 @@ public class TowerManager : MonoBehaviour
     [SerializeField] public GreenRanger greenRanger;
     [SerializeField] public PinkRanger pinkRanger;
 
+    public GameObject go;
+
     List<GameObject> rangerList;
 
     private static TowerManager instance;

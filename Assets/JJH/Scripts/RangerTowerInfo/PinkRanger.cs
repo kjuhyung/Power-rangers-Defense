@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PinkRanger : BaseTowerData
 {
+    Coroutine pinkCor;
+    public GameObject bp;
+    Animator anim;
     public float heal { get; set; }
 
     public void PinkSetData(string _name, float _att, float _attDelay, float _hp, float _heal)
@@ -13,13 +16,12 @@ public class PinkRanger : BaseTowerData
         heal = _heal;
     }
 
-    void Start()
-    {
-        TowerManager.Instance.pinkRanger = this;
-    }
 
-    public override void Update()
+    public void Update()
     {
-        TowerAttck(this);
+        if (TowerAttck() == true && pinkCor == null)
+        {
+            pinkCor  = StartCoroutine(SpawnBullet(TowerManager.Instance.pinkRanger, bp));
+        }
     }
 }

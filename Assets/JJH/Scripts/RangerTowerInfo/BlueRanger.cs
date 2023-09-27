@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class BlueRanger : BaseTowerData
 {
+    Coroutine blueCor;
+    public GameObject bp;
+    Animator anim;
     public float slowTime { get; set; }
     public float slowRange { get; set; }
 
@@ -13,10 +16,6 @@ public class BlueRanger : BaseTowerData
         slowTime = _slowTime;
     }
 
-    void Start()
-    {
-        TowerManager.Instance.blueRanger = this;
-    }
 
     public float CalcSlowRange(float towerAttValue)
     {
@@ -29,10 +28,14 @@ public class BlueRanger : BaseTowerData
     {
         yield return new WaitForSeconds(slowTime);
 
+
     }
 
-    public override void Update()
+    public void Update()
     {
-        TowerAttck(this);
+        if (TowerAttck() == true && blueCor == null)
+        {
+            blueCor = StartCoroutine(SpawnBullet(TowerManager.Instance.blueRanger, bp));
+        }
     }
 }

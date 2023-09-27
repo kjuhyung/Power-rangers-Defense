@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RedRanger : BaseTowerData
 {
+    Coroutine redCor;
     public void RedSetData(string _name, float _att, float _attDelay, float _hp)
     {
         base.SetData(_name, _att, _attDelay, _hp);
@@ -18,11 +19,13 @@ public class RedRanger : BaseTowerData
 
     void Start()
     {
-        TowerManager.Instance.redRanger = this;
+        
+        //TowerManager.Instance.redRanger
     }
 
-    public override void Update()
+    public void Update()
     {
         
     }
+
 }
