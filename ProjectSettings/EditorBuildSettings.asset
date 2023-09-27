@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/MJK/Scene/StageScene.unity
     guid: 540d18991c24f49e8bbb4614b7beb9b2
+  - enabled: 1
+    path: Assets/MJK/Scene/TestScene.unity
+    guid: 0723be379ed0145a3a1ff554a28c986c
   m_configObjects: {}

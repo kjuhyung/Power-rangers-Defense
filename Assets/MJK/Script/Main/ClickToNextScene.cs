@@ -22,7 +22,7 @@ public class ClickToNextScene : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
+    
     private void Start()
     {
         CheckScene();
