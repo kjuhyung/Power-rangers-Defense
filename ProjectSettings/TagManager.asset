@@ -4,9 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Defender
   - Monster
-  - Tower
-  - Earth
+  - Tile
+  - Bullet
   layers:
   - Default
   - TransparentFX
