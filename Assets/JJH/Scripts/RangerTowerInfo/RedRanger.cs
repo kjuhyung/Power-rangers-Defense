@@ -11,7 +11,18 @@ public class RedRanger : BaseTowerData
 
     public float ReflexDamageCalc(float _enemyAttValue)
     {
+        //todo
         float redHp = hp;
         return redHp / _enemyAttValue;
+    }
+
+    void Start()
+    {
+        TowerManager.Instance.redRanger = this;
+    }
+
+    public override void Update()
+    {
+        
     }
 }

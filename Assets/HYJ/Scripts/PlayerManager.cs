@@ -25,10 +25,6 @@ public class PlayerManager : MonoBehaviour
     public DiaManager diaManager;
     public  PlayerHP playerHP;
 
-    public PlayerGold playerGold;
-    public DiaManager diaManager;
-    public PlayerHP playerHP;
-
     private void Awake()
     {
         if (instance != null && instance != this)

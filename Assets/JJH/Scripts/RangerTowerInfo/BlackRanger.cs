@@ -8,4 +8,14 @@ public class BlackRanger : BaseTowerData
     {
         base.SetData(_name, _att, _attDelay, _hp);
     }
+
+    void Start()
+    {
+        TowerManager.Instance.blackRanger = this;
+    }
+
+    public override void Update()
+    {
+        TowerAttck(this);
+    }
 }

@@ -1,15 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 using UnityEngine.Serialization;
 
 public abstract class BaseTowerData : MonoBehaviour //이거를 붙혀도
 {
-    Ray2D ray;
-    RaycastHit hit;
-    Transform tr;
-
     public GameObject Bullets;
     public string towerName { get; set; }
     public float att { get; set; }
@@ -25,33 +22,35 @@ public abstract class BaseTowerData : MonoBehaviour //이거를 붙혀도
         hp = _hp;
     }
 
-    void Awake()
-    {
-        tr = GetComponent<Transform>();
-    }
-
     public void TowerDamaged(float monsterAttValue)
     {
         //todo
     }
 
-    public void TowerAttck()//int _towerAttVlaue
+    public void TowerAttck(BaseTowerData btd)//int _towerAttVlaue
     {
-        //ray = new Ray2D(tr.position, Vector2.right);
-        //if(Physics.Raycast(ray, out hit, 100f))
-        //{
-        //    if (hit.transform.CompareTag("Monster"))
-        //    {
-        //        Instantiate(Bullets);
-        //        Debug.DrawRay
-        //        Debug.Log("asd");
-        //    }
-        //}
+        Vector2 rayOrigin = transform.position;
+        Vector2 rayDirection = Vector2.right; // 오른쪽 방향으로 레이 발사
+
+        int layer = LayerMask.GetMask("Monster");
+        RaycastHit2D hit = Physics2D.Raycast(rayOrigin, rayDirection, Mathf.Infinity, layer);
+
+        if (hit.collider != null)
+        {
+            float attDelay = btd.attDelay;
+            InvokeRepeating(nameof(SpawnBullet), 0f, attDelay);
+        }
         //Todo
+    }
+
+    public void SpawnBullet()
+    {
+        Instantiate(Bullets);
+        Debug.Log(attDelay);
     }
 
     public virtual void Update()
     {
-        TowerAttck();
+
     }
 }

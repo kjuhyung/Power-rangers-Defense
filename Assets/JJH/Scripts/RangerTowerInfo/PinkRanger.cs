@@ -9,6 +9,17 @@ public class PinkRanger : BaseTowerData
     public void PinkSetData(string _name, float _att, float _attDelay, float _hp, float _heal)
     {
         base.SetData(_name, _att, _attDelay, _hp);
+        
         heal = _heal;
+    }
+
+    void Start()
+    {
+        TowerManager.Instance.pinkRanger = this;
+    }
+
+    public override void Update()
+    {
+        TowerAttck(this);
     }
 }

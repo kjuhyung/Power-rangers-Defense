@@ -13,7 +13,12 @@ public class BlueRanger : BaseTowerData
         slowTime = _slowTime;
     }
 
-    public float CalcSlowRange(int towerAttValue)
+    void Start()
+    {
+        TowerManager.Instance.blueRanger = this;
+    }
+
+    public float CalcSlowRange(float towerAttValue)
     {
 
 
@@ -24,5 +29,10 @@ public class BlueRanger : BaseTowerData
     {
         yield return new WaitForSeconds(slowTime);
 
+    }
+
+    public override void Update()
+    {
+        TowerAttck(this);
     }
 }
