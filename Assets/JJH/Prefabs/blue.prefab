@@ -73,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 10
   m_Sprite: {fileID: 1040565578, guid: 25ca6645150a520468f4d3f4d8a83b51, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -171,7 +171,7 @@ Transform:
   - {fileID: 92558149116854120}
   - {fileID: 3275640281383034221}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &6467581903105977284
 BoxCollider2D:
@@ -245,5 +245,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullets: {fileID: 3496147786513085379, guid: 1374e7bb49cb4e84bbc77666976e76d4, type: 3}
-  tower: {fileID: 5522182389895385642}
   bp: {fileID: 5479675799648543384}

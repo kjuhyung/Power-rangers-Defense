@@ -1,3 +1,4 @@
+using System.Threading;
 using UnityEngine;
 
 public class Monster : MonoBehaviour
@@ -8,6 +9,8 @@ public class Monster : MonoBehaviour
     private Rigidbody2D _rigid;
     private Animator _anim;
     private PlayerManager _playerManager;
+
+    string targetRangerName;
 
     public float curHealth { get; set; }
     public float maxHealth { get; private set; }
@@ -85,6 +88,8 @@ public class Monster : MonoBehaviour
         if (other.tag == "Defender")
         {
             IsAttacking = true;
+            targetRangerName = other.gameObject.GetComponent<BaseTowerData>().towerName;
+
             InvokeRepeating(nameof(MonsterGiveAttack), 0, attackDelay);
         }
         else if (other.tag == "Earth")
@@ -104,12 +109,17 @@ public class Monster : MonoBehaviour
         else return;
     }
 
+    #region GiveTowerDmg Method
     private void MonsterGiveAttack()
     {
-        // TODO
-        // TowerManager.Instance.RedRanger.TowerGetDmg(attackDamage);
+        var tower = TowerManager.Instance.GetTower(targetRangerName);
+        if (tower != null)
+        {
+            //tower.TowerDamaged(); TODO
+        }
         _anim.SetTrigger("Attack");        
     }
+    #endregion
 
     public void MosterTakeDamage(float _damage)
     {

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1714873355129627336}
   - component: {fileID: 2270961263023236914}
   - component: {fileID: 8059484589597861944}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Monster_Pink
   m_TagString: Monster
   m_Icon: {fileID: 0}
