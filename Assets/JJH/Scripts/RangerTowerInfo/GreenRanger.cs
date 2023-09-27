@@ -4,11 +4,20 @@ using UnityEngine;
 
 public class GreenRanger : BaseTowerData
 {
-    public float attRangeMultiple { get; set; }
-
-    public void GreenSetData(string _name, float _att, float _attDelay, float _hp, float _attRangeMultiple)
+    Coroutine greenCor;
+    public GameObject bp;
+    Animator anim;
+    public void GreenSetData(string _name, float _att, float _attDelay, float _hp)
     {
         base.SetData(_name, _att, _attDelay, _hp);
-        attRangeMultiple = _attRangeMultiple;
+    }
+
+
+    public void Update()
+    {
+        if (TowerAttck() == true && greenCor == null)
+        {
+            greenCor = StartCoroutine(SpawnBullet(TowerManager.Instance.greenRanger, bp));
+        }
     }
 }

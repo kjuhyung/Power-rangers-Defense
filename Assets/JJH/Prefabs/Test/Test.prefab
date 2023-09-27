@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6777919399655372544}
   - component: {fileID: 4216707438800425825}
   - component: {fileID: 687295375570528570}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Test
   m_TagString: Monster
   m_Icon: {fileID: 0}
@@ -128,6 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsterType: 3
+  tlm: {fileID: 1725143501551550512, guid: 59bdcaf3c587ca441858d138fe08ca1b, type: 3}
 --- !u!70 &4216707438800425825
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

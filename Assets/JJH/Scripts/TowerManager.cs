@@ -11,6 +11,8 @@ public class TowerManager : MonoBehaviour
     [SerializeField] public GreenRanger greenRanger;
     [SerializeField] public PinkRanger pinkRanger;
 
+    public GameObject go;
+
     List<GameObject> rangerList;
 
     private static TowerManager instance;
@@ -40,7 +42,7 @@ public class TowerManager : MonoBehaviour
         //                              name, attValue, attDelay, hp, 
         redRanger.RedSetData("RedRanger", 0f, 2f, 10f);
         blueRanger.BlueSetData("BlueRanger", 1f, 3f, 5f, 2f);
-        greenRanger.GreenSetData("GreenRanger", 2f, 5f, 4f, 3f);
+        greenRanger.GreenSetData("GreenRanger", 2f, 5f, 4f);
         blackRanger.BlackSetData("BlackRanger", 1f, 2f, 6f);
         pinkRanger.PinkSetData("PinkRanger", 1f, 2f, 8f, 1f);
 

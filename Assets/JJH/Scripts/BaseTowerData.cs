@@ -1,21 +1,23 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public abstract class BaseTowerData : MonoBehaviour //이거를 붙혀도
+public class BaseTowerData : MonoBehaviour //이거를 붙혀도
 {
-    Ray2D ray;
-    RaycastHit hit;
-    Transform tr;
-
     public GameObject Bullets;
     public string towerName { get; set; }
     public float att { get; set; }
     public float attDelay { get; set; }
     public float hp { get; set; }
+    public float currentHp { get; set; }
 
+    public virtual void Awake()
+    {
+
+    }
 
     public void SetData(string _name, float _att, float _attDelay, float _hp)
     {
@@ -23,35 +25,50 @@ public abstract class BaseTowerData : MonoBehaviour //이거를 붙혀도
         att = _att;
         attDelay = _attDelay;
         hp = _hp;
+        currentHp = _hp;
     }
 
-    void Awake()
-    {
-        tr = GetComponent<Transform>();
-    }
-
-    public void TowerDamaged(float monsterAttValue)
+    public void TowerDamaged(BaseTowerData btd, float monsterAttValue)
     {
         //todo
+        //btd.currentHp -= monsterAttValue;
+        //Debug.Log(currentHp + " tower");
+        //if (hp < 0)
+        //{
+        //    Destroy(gameObject);
+        //}
+        
     }
 
-    public void TowerAttck()//int _towerAttVlaue
+    public bool TowerAttck()
     {
-        //ray = new Ray2D(tr.position, Vector2.right);
-        //if(Physics.Raycast(ray, out hit, 100f))
-        //{
-        //    if (hit.transform.CompareTag("Monster"))
-        //    {
-        //        Instantiate(Bullets);
-        //        Debug.DrawRay
-        //        Debug.Log("asd");
-        //    }
-        //}
+        Vector2 rayOrigin = transform.position;
+        Vector2 rayDirection = Vector2.right; // 오른쪽 방향으로 레이 발사
+
+        int layer = LayerMask.GetMask("Monster");
+        RaycastHit2D hit = Physics2D.Raycast(rayOrigin, rayDirection, Mathf.Infinity, layer);
+
+        if (hit.collider != null)
+        {
+            //anim.SetBool("isAttached", true);
+            return true;
+        }
+        else
+        {
+            return false;
+        }
         //Todo
     }
 
-    public virtual void Update()
+    public virtual IEnumerator SpawnBullet(BaseTowerData btd, GameObject bulletPoint)
     {
-        TowerAttck();
+        while (true)
+        {
+            var go = Instantiate(Bullets);
+            go.transform.position = bulletPoint.transform.position;
+            
+            Debug.Log("bts" + go.transform.position);
+            yield return new WaitForSeconds(btd.attDelay);
+        }
     }
 }
