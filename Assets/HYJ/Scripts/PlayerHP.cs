@@ -37,7 +37,7 @@ public class PlayerHP : MonoBehaviour
         }
         else if (currentHP == 0)
         {
-           //게임오버 
+            GameManager.instance.GameOver();
         }
     }
 

@@ -3,27 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class PlayerGold : MonoBehaviour
-{
-    public int currentGold = 1000; // √ ±‚ ∞ÒµÂ
-    public TMP_Text goldText;
+//public class PlayerGold : MonoBehaviour
+//{
+//    public int currentGold = 1000; // √ ±‚ ∞ÒµÂ
+//    public TMP_Text goldText;
 
-    void Start()
-    {
-        UpdateGoldText();
-    }
+//    void Start()
+//    {
+//        UpdateGoldText();
+//    }
 
-    public void AddGold(int amount)
-    {
-        currentGold += amount;
-        UpdateGoldText();
-    }
+//    public void AddGold(int amount)
+//    {
+//        currentGold += amount;
+//        UpdateGoldText();
+//    }
 
-    private void UpdateGoldText()
-    {
-        goldText.text = currentGold + " G";
-    }
-}
+//    private void UpdateGoldText()
+//    {
+//        goldText.text = currentGold + " G";
+//    }
+//}
 
 public class RangerEnhance : MonoBehaviour
 {
