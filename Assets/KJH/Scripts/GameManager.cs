@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -14,15 +15,20 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private Slider timeGauge;
 
+    [SerializeField] private GameObject gameOverPanel;
+    [SerializeField] private GameObject losePanel;
+    [SerializeField] private GameObject winPanel;
+
+    private PlayerManager _playerManager;
 
     private void Awake()
     {
         instance = this;
-
     }
 
     private void Start()
     {
+        Time.timeScale = 1;
         gameTime = 0f;
         maxGameTime = 3 * 10f;
         flagGoal1.enabled = false;
@@ -43,9 +49,8 @@ public class GameManager : MonoBehaviour
             {
                 gameTime = maxGameTime;
                 finalGoal.enabled = true;
-                Time.timeScale = 0f;
-                // TODO
-                // 보상 화면 
+                Time.timeScale = 0f;                
+                GameWon();
             }
         }
     }
@@ -54,6 +59,27 @@ public class GameManager : MonoBehaviour
         timeGauge.value = gameTime / maxGameTime;
     }
 
+    public void GameOver()
+    {
+        Time.timeScale = 0;
+        gameOverPanel.SetActive(true);
+        losePanel.SetActive(true);
+    }
 
+    private void GameWon()
+    {
+        gameOverPanel.SetActive(true);
+        winPanel.SetActive(true);
+        // _playerManager.diaManager.StageCleared(500);
+    }
 
+    public void OnClickRestartBtn()
+    {
+        SceneManager.LoadScene("MainScene");
+    }
+
+    public void OnClickStageBtn()
+    {
+        SceneManager.LoadScene("StageScene");
+    }
 }

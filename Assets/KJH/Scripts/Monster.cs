@@ -82,7 +82,7 @@ public class Monster : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Tower")
+        if (other.tag == "Defender")
         {
             IsAttacking = true;
             InvokeRepeating(nameof(MonsterGiveAttack), 0, attackDelay);
@@ -91,12 +91,12 @@ public class Monster : MonoBehaviour
         {
             _anim.SetTrigger("Death");
             _playerManager.playerHP.MonsterReachedGoal();            
-        }
+        }       
         else return;            
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.tag == "Tower")
+        if (other.tag == "Defender")
         {
             IsAttacking = false;
             CancelInvoke(nameof(MonsterGiveAttack));
@@ -118,7 +118,6 @@ public class Monster : MonoBehaviour
 
         if (curHealth <= 0)
         {
-            // TODO
             _playerManager.playerGold.AddGold(goldPerDeath);
             IsDeath = true;
             _anim.SetTrigger("Death");

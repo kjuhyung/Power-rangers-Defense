@@ -11,6 +11,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] private Transform MonsterPool;
 
     private float spawnTimer;
+    private int spawnLevel;
 
     private void Awake()
     {
@@ -26,11 +27,31 @@ public class Spawner : MonoBehaviour
     private void Update()
     {
         spawnTimer += Time.deltaTime;
-
-        if (spawnTimer > 0.5f )
+        spawnLevel = Mathf.FloorToInt(GameManager.instance.gameTime / 10f);
+        
+        switch (spawnLevel)
         {
-            spawnTimer = 0;
-            SpawnMonster();
+            case 0:
+                if (spawnTimer > 2f)
+                {
+                    spawnTimer = 0;
+                    SpawnMonster();
+                }
+                break;
+            case 1:
+                if (spawnTimer > 1.5f)
+                {
+                    spawnTimer = 0;
+                    SpawnMonster();
+                }
+                break;
+            case 2:
+                if (spawnTimer > 1f)
+                {
+                    spawnTimer = 0;
+                    SpawnMonster();
+                }
+                break;            
         }
     }
     private void SpawnMonster()
