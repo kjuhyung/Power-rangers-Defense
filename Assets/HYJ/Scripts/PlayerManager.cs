@@ -25,6 +25,10 @@ public class PlayerManager : MonoBehaviour
     public DiaManager diaManager;
     public  PlayerHP playerHP;
 
+    public PlayerGold playerGold;
+    public DiaManager diaManager;
+    public PlayerHP playerHP;
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -35,7 +39,6 @@ public class PlayerManager : MonoBehaviour
 
         instance = this;
         DontDestroyOnLoad(gameObject); // 씬 전환 시 파괴되지 않도록 설정
-
 
         playerGold = FindObjectOfType<PlayerGold>();
         diaManager = FindObjectOfType<DiaManager>();
