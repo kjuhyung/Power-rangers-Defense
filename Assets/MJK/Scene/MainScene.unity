@@ -1005,6 +1005,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7434484776575476328, guid: 8830ec8bd4adccf4ab8b64535911bef4, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 7434484776575476329, guid: 8830ec8bd4adccf4ab8b64535911bef4, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
@@ -1015,15 +1019,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7434484776575476331, guid: 8830ec8bd4adccf4ab8b64535911bef4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.37
+      value: -0.2
       objectReference: {fileID: 0}
     - target: {fileID: 7434484776575476331, guid: 8830ec8bd4adccf4ab8b64535911bef4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 25.41
+      value: 28.1
       objectReference: {fileID: 0}
     - target: {fileID: 7434484776575476331, guid: 8830ec8bd4adccf4ab8b64535911bef4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.58
+      value: -3.4
       objectReference: {fileID: 0}
     - target: {fileID: 7434484776575476331, guid: 8830ec8bd4adccf4ab8b64535911bef4, type: 3}
       propertyPath: m_LocalRotation.w
