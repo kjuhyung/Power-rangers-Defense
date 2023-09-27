@@ -7,10 +7,11 @@ public class Monster : MonoBehaviour
 
     private Rigidbody2D _rigid;
     private Animator _anim;
+    private PlayerManager _playerManager;
 
     public float curHealth { get; set; }
     public float maxHealth { get; private set; }
-    public int attackDamage { get; private set; }
+    public float attackDamage { get; private set; }
     private float attackDelay;
     public float moveSpeed { get; set; }
     private int goldPerDeath;
@@ -22,6 +23,10 @@ public class Monster : MonoBehaviour
     {
         _rigid = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
+    }
+    private void OnEnable()
+    {
+        _playerManager = PlayerManager.Instance;
     }
 
     private void Start()
@@ -36,21 +41,21 @@ public class Monster : MonoBehaviour
                 maxHealth = 200f;
                 attackDamage = 5;
                 attackDelay = 1f;
-                moveSpeed = 20f;
+                moveSpeed = 200f;
                 goldPerDeath = 5;
                 break;
             case MonsterType.Owlet:
                 maxHealth = 300f;
                 attackDamage = 15;
                 attackDelay = 2f;
-                moveSpeed = 10f;
+                moveSpeed = 100f;
                 goldPerDeath = 15;
                 break;
             case MonsterType.Dude:
                 maxHealth = 100f;
                 attackDamage = 10;
                 attackDelay = 0.5f;
-                moveSpeed = 30f;
+                moveSpeed = 300f;
                 goldPerDeath = 10;
                 break;
         }
@@ -77,26 +82,25 @@ public class Monster : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Defender")
+        if (other.tag == "Tower")
         {
             IsAttacking = true;
-            Debug.Log("타워 충돌");
-            MonsterGiveAttack();
+            InvokeRepeating(nameof(MonsterGiveAttack), 0, attackDelay);
         }
         else if (other.tag == "Earth")
         {
-            // TODO
-            // gameObject.SetActive(false);
-            // spawnmanager 에게 반환
-            // 플레이어 피 감소
+            Debug.Log("지구에 닿았다");
+            // _playerManager.playerHP.currentHP -= 1;
+            _anim.SetTrigger("Death");
         }
         else return;            
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.tag == "Defender")
+        if (other.tag == "Tower")
         {
             IsAttacking = false;
+            CancelInvoke(nameof(MonsterGiveAttack));
         }
         else return;
     }
@@ -104,23 +108,26 @@ public class Monster : MonoBehaviour
     private void MonsterGiveAttack()
     {
         // TODO
-        // attack anim
-        // 데미지 주기 + attackDealy 만큼 대기
+        // TowerManager.Instance.RedRanger.TowerGetDmg(attackDamage);
+        _anim.SetTrigger("Attack");        
     }
 
-    public void MosterTakeDamage(int _damage)
+    public void MosterTakeDamage(float _damage)
     {
         curHealth -= _damage;
-
-        // TODO
-        // Hit anim
+        _anim.SetTrigger("Hit");
 
         if (curHealth <= 0)
         {
             // TODO
-            // Death anim
-            // player 골드 증가 (goldperkill)
-            // Destroy - anim event
+            _playerManager.playerGold.AddGold(goldPerDeath);
+            IsDeath = true;
+            _anim.SetTrigger("Death");
         }
+    }
+
+    private void MonsterDestroy()
+    {
+        gameObject.SetActive(false);
     }
 }
