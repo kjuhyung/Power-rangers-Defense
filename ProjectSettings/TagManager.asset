@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Defender
   - Monster
+  - Tile
+  - Bullet
   layers:
   - Default
   - TransparentFX
