@@ -12,7 +12,10 @@ EditorBuildSettings:
     path: Assets/Scenes/StageScene.unity
     guid: 3e2e98176baed204fa1e2ba3fdd760ad
   - enabled: 1
-    path: Assets/Scenes/MainScene.unity
+    path: Assets/Scenes/MainScene1.unity
+    guid: 643a2ea44032301448befc7ad3788faa
+  - enabled: 1
+    path: Assets/Scenes/MainScene2.unity
     guid: 19f93383dc3963144829c6457119bba4
   - enabled: 1
     path: Assets/Scenes/Tower management.unity

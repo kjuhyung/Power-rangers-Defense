@@ -19,7 +19,7 @@ public class PlayerGold : MonoBehaviour
 
     public void AddGold(int amount)
     {
-        currentGold += amount; // 몬스터가 죽으면 나올 골드를 더해준다
+        currentGold += amount; // 몬스터가 죽으면 나올 골드를 더해준다        
     }
 
     private void LateUpdate()
