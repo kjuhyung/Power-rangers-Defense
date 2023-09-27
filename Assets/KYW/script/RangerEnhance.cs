@@ -3,25 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class PlayerGold : MonoBehaviour
+public class PlayerDiamonds : MonoBehaviour
 {
-    public int currentGold = 1000; // 초기 골드
-    public TMP_Text goldText;
+    public int currentDiamonds = 0; // 초기 다이아몬드는 0으로 설정
+    public TMP_Text diamondsText;
 
     void Start()
     {
-        UpdateGoldText();
+        UpdateDiamondsText();
     }
 
-    public void AddGold(int amount)
+    public void AddDiamonds(int amount)
     {
-        currentGold += amount;
-        UpdateGoldText();
+        currentDiamonds += amount;
+        UpdateDiamondsText();
     }
 
-    private void UpdateGoldText()
+    private void UpdateDiamondsText()
     {
-        goldText.text = currentGold + " G";
+        diamondsText.text = currentDiamonds + " Diamonds";
     }
 }
 
@@ -46,7 +46,7 @@ public class RangerEnhance : MonoBehaviour
         }
     }
 
-    private PlayerGold playerGold; // PlayerGold 클래스의 인스턴스를 참조할 변수 추가
+    private PlayerDiamonds playerDiamonds; // PlayerDiamonds 클래스의 인스턴스를 참조할 변수 추가
 
     public Ranger redRanger;
     public Ranger blueRanger;
@@ -63,31 +63,31 @@ public class RangerEnhance : MonoBehaviour
         greenRanger.Initialize("Green Ranger", 8f, 2.8f, 1);
         pinkRanger.Initialize("Pink Ranger", 6.5f, 2.3f, 1);
 
-        // PlayerGold 클래스의 인스턴스 참조
-        playerGold = FindObjectOfType<PlayerGold>();
+        // PlayerDiamonds 클래스의 인스턴스 참조
+        playerDiamonds = FindObjectOfType<PlayerDiamonds>();
     }
 
     public void EnhanceRanger(RangerType rangerType)
     {
-        // 골드가 충분한지 확인
+        // 다이아몬드가 충분한지 확인
         int enhancementCost = GetEnhancementCost(rangerType);
-        if (playerGold.currentGold >= enhancementCost)
+        if (playerDiamonds.currentDiamonds >= enhancementCost)
         {
-            // 골드 차감
-            playerGold.AddGold(-enhancementCost);
+            // 다이아몬드 차감
+            playerDiamonds.AddDiamonds(-enhancementCost);
 
             // 레인저 강화
             GetRanger(rangerType).EnhanceRanger();
 
             // 강화 후 공격력과 공격 속도 출력
             Ranger enhancedRanger = GetRanger(rangerType);
-            Debug.Log(enhancedRanger.GetRangerName() + "이(가) 골드 " + enhancementCost + "를 소모하여 강화되었습니다.");
+            Debug.Log(enhancedRanger.GetRangerName() + "이(가) 다이아몬드 " + enhancementCost + "를 소모하여 강화되었습니다.");
             Debug.Log("새로운 공격력: " + enhancedRanger.GetAttackDamage());
             Debug.Log("새로운 공격 속도: " + enhancedRanger.GetAttackSpeed());
         }
         else
         {
-            Debug.Log("골드가 부족합니다!");
+            Debug.Log("다이아몬드가 부족합니다!");
         }
     }
 
@@ -179,6 +179,7 @@ public abstract class Ranger : MonoBehaviour
         return baseAttackSpeed;
     }
 }
+
 
 
 
