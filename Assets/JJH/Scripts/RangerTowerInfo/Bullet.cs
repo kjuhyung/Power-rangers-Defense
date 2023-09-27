@@ -33,6 +33,7 @@ public class Bullet : MonoBehaviour
         if (other.tag == "Monster")
         {
             //monster.MosterTakeDamage(rangerTower.att);
+            other.gameObject.GetComponent<Monster>().MosterTakeDamage(rangerTower.att);
         }
     }
 }
