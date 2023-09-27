@@ -89,9 +89,8 @@ public class Monster : MonoBehaviour
         }
         else if (other.tag == "Earth")
         {
-            Debug.Log("지구에 닿았다");
-            // _playerManager.playerHP.currentHP -= 1;
             _anim.SetTrigger("Death");
+            _playerManager.playerHP.MonsterReachedGoal();            
         }
         else return;            
     }
