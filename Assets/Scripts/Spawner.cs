@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -29,10 +30,7 @@ public class Spawner : MonoBehaviour
     {
         spawnTimer += Time.deltaTime;
         spawnLevel = Mathf.FloorToInt(GameManager.instance.gameTime / 10f);
-        // if(SceneManager.GetActiveScene().buildIndex == 2)
-        // {
-
-        // }
+        
         switch (spawnLevel)
         {
             case 0:
@@ -60,12 +58,20 @@ public class Spawner : MonoBehaviour
     }
     private void SpawnMonster()
     {
-       GameObject monster = GetMonster(Random.Range(0, 3));
-        monster.transform.position = spawnPoint[Random.Range(1, spawnPoint.Length - 1)].position;
+        if(SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            GameObject monster = GetMonster(Random.Range(0, 3));
+            monster.transform.position = spawnPoint[Random.Range(1, spawnPoint.Length - 1)].position;
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 3)
+        {
+            GameObject monster = GetMonster(Random.Range(0, 4));
+            monster.transform.position = spawnPoint[Random.Range(1, spawnPoint.Length - 1)].position;
+        }       
     }
 
     private GameObject GetMonster(int index)
-    {
+    {        
         GameObject selectMonster = null;
 
         foreach (GameObject monster in monsterPools[index])

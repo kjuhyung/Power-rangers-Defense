@@ -8,11 +8,6 @@ public class GameManager : MonoBehaviour
 
     [HideInInspector] public float gameTime;
     [HideInInspector] public float maxGameTime;
-
-    [SerializeField] private Image flagGoal1;
-    [SerializeField] private Image flagGoal2;
-    [SerializeField] private Image finalGoal;
-
     [SerializeField] private Slider timeGauge;
 
     [SerializeField] private GameObject gameOverPanel;
@@ -31,28 +26,18 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         gameTime = 0f;
         maxGameTime = 3 * 10f;
-        flagGoal1.enabled = false;
-        flagGoal2.enabled = false;
-        finalGoal.enabled = false;
     }
 
     private void Update()
     {
         gameTime += Time.deltaTime;
-
-        if (gameTime > 10f)
+        if (gameTime > maxGameTime)
         {
-            flagGoal1.enabled = true;
-            if (gameTime > 20f)
-                flagGoal2.enabled = true;
-            if (gameTime > maxGameTime)
-            {
-                gameTime = maxGameTime;
-                finalGoal.enabled = true;
-                Time.timeScale = 0f;                
-                GameWon();
-            }
+            gameTime = maxGameTime;
+            Time.timeScale = 0f;
+            GameWon();
         }
+
     }
     private void LateUpdate()
     {
@@ -75,7 +60,7 @@ public class GameManager : MonoBehaviour
 
     public void OnClickRestartBtn()
     {
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void OnClickStageBtn()

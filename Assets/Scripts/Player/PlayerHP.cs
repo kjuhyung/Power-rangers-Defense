@@ -27,17 +27,20 @@ public class PlayerHP : MonoBehaviour
         }
     }
 
+    private void LateUpdate()
+    {
+        if (currentHP == 0)
+        {
+            GameManager.instance.GameOver();
+        }
+    }
+
     public void MonsterReachedGoal()
     {
         if (currentHP > 0)
         {
             currentHP --;
             UpdateHPUI();
-
-        }
-        else if (currentHP == 0)
-        {
-            GameManager.instance.GameOver();
         }
     }
 
