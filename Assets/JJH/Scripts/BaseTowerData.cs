@@ -35,16 +35,13 @@ public abstract class BaseTowerData : MonoBehaviour //이거를 붙혀도
         return towerName;
     }
 
-    public void TowerDamaged(float monsterAttValue)
+    public void TowerDamaged(string towerName,float monsterAttValue)
     {
         //todo
-        Debug.Log(currentHp);
-        Debug.Log(monsterAttValue);
         currentHp -= monsterAttValue;
-        Debug.Log(currentHp + " tower");
-        if (hp < 0)
+        if (currentHp <= 0)
         {
-            Destroy(gameObject);
+            TowerManager.Instance.DestroyRangerTower(towerName);
         }
 
     }

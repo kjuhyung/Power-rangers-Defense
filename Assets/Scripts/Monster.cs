@@ -89,7 +89,7 @@ public class Monster : MonoBehaviour
         {
             IsAttacking = true;
             targetRangerName = other.gameObject.GetComponent<BaseTowerData>().GetTowerName();
-            Debug.Log(targetRangerName);
+            //Debug.Log(targetRangerName);
             InvokeRepeating(nameof(MonsterGiveAttack), 0, attackDelay);
         }
         else if (other.tag == "Earth")
@@ -99,6 +99,7 @@ public class Monster : MonoBehaviour
         }       
         else return;            
     }
+
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.tag == "Defender")
@@ -117,7 +118,7 @@ public class Monster : MonoBehaviour
         if (tower != null)
         {
             //tower.TowerDamaged(); TODO
-            tower.TowerDamaged(attackDamage);
+            tower.TowerDamaged(tower.towerName, attackDamage);
         }
         _anim.SetTrigger("Attack");        
     }

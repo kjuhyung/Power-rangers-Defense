@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TowerMakeClick : MonoBehaviour
 {
+    public static TowerMakeClick Instance;
+
     private bool isClicked = false;
 
     public BaseTowerData BTDalphaRanger;
@@ -18,6 +20,13 @@ public class TowerMakeClick : MonoBehaviour
     private Camera mainCam;
     private Ray ray;
     private RaycastHit hit;
+
+    public GameObject addTower;
+
+    void Awake()
+    {
+        Instance = this;
+    }
 
     void Start()
     {
@@ -75,7 +84,9 @@ public class TowerMakeClick : MonoBehaviour
         }
         tile.isBuiltTower = true;
 
-        Instantiate(GOrealRanger, new Vector3(tileTransform.position.x, tileTransform.position.y+0.3f, 0), Quaternion.identity);
+        addTower = (GameObject)Instantiate(GOrealRanger, new Vector3(tileTransform.position.x, tileTransform.position.y + 0.3f, 0), Quaternion.identity);
+
+
     }
 
     public void CalcMousePos_PlaceTower()
