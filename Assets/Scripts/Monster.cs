@@ -88,8 +88,8 @@ public class Monster : MonoBehaviour
         if (other.tag == "Defender")
         {
             IsAttacking = true;
-            targetRangerName = other.gameObject.GetComponent<BaseTowerData>().towerName;
-
+            targetRangerName = other.gameObject.GetComponent<BaseTowerData>().GetTowerName();
+            Debug.Log(targetRangerName);
             InvokeRepeating(nameof(MonsterGiveAttack), 0, attackDelay);
         }
         else if (other.tag == "Earth")
@@ -113,9 +113,11 @@ public class Monster : MonoBehaviour
     private void MonsterGiveAttack()
     {
         var tower = TowerManager.Instance.GetTower(targetRangerName);
+        
         if (tower != null)
         {
             //tower.TowerDamaged(); TODO
+            tower.TowerDamaged(attackDamage);
         }
         _anim.SetTrigger("Attack");        
     }
@@ -125,7 +127,6 @@ public class Monster : MonoBehaviour
     {
         curHealth -= _damage;
         _anim.SetTrigger("Hit");
-
         if (curHealth <= 0)
         {
             _playerManager.playerGold.AddGold(goldPerDeath);

@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63031db465c09cc45be68ab5c758853e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BTDalphaRanger: {fileID: 300409983109258647, guid: 106e0c5de0077524a8ba55440cf49a79, type: 3}
+  BTDalphaRanger: {fileID: 4725668874321756122, guid: 106e0c5de0077524a8ba55440cf49a79, type: 3}
   BTDrealRanger: {fileID: 300409983109258647}
 --- !u!114 &300409983109258647
 MonoBehaviour:

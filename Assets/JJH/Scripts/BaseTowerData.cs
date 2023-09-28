@@ -5,9 +5,11 @@ using Unity.Burst.CompilerServices;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class BaseTowerData : MonoBehaviour //이거를 붙혀도
+public abstract class BaseTowerData : MonoBehaviour //이거를 붙혀도
 {
     public GameObject Bullets;
+
+    public Animator anim;
     public string towerName { get; set; }
     public float att { get; set; }
     public float attDelay { get; set; }
@@ -16,7 +18,7 @@ public class BaseTowerData : MonoBehaviour //이거를 붙혀도
 
     public virtual void Awake()
     {
-
+        anim = GetComponentInChildren<Animator>();
     }
 
     public void SetData(string _name, float _att, float _attDelay, float _hp)
@@ -28,16 +30,23 @@ public class BaseTowerData : MonoBehaviour //이거를 붙혀도
         currentHp = _hp;
     }
 
+    public virtual string GetTowerName()
+    {
+        return towerName;
+    }
+
     public void TowerDamaged(float monsterAttValue)
     {
         //todo
-        //btd.currentHp -= monsterAttValue;
-        //Debug.Log(currentHp + " tower");
-        //if (hp < 0)
-        //{
-        //    Destroy(gameObject);
-        //}
-        
+        Debug.Log(currentHp);
+        Debug.Log(monsterAttValue);
+        currentHp -= monsterAttValue;
+        Debug.Log(currentHp + " tower");
+        if (hp < 0)
+        {
+            Destroy(gameObject);
+        }
+
     }
 
     public bool TowerAttck()
@@ -46,11 +55,11 @@ public class BaseTowerData : MonoBehaviour //이거를 붙혀도
         Vector2 rayDirection = Vector2.right; // 오른쪽 방향으로 레이 발사
 
         int layer = LayerMask.GetMask("Monster");
-        RaycastHit2D hit = Physics2D.Raycast(rayOrigin, rayDirection, 30f, layer);
+        RaycastHit2D hit = Physics2D.Raycast(rayOrigin, rayDirection, Mathf.Infinity , layer);
 
+        
         if (hit.collider != null)
         {
-            //anim.SetBool("isAttached", true);
             return true;
         }
         else
@@ -67,7 +76,6 @@ public class BaseTowerData : MonoBehaviour //이거를 붙혀도
             var go = Instantiate(Bullets);
             go.transform.position = bulletPoint.transform.position;
             
-            Debug.Log("bts" + go.transform.position);
             yield return new WaitForSeconds(btd.attDelay);
         }
     }

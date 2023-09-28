@@ -75,7 +75,7 @@ public class TowerMakeClick : MonoBehaviour
         }
         tile.isBuiltTower = true;
 
-        Instantiate(GOrealRanger, new Vector3(tileTransform.position.x, tileTransform.position.y + 1, 0), Quaternion.identity);
+        Instantiate(GOrealRanger, new Vector3(tileTransform.position.x, tileTransform.position.y+0.3f, 0), Quaternion.identity);
     }
 
     public void CalcMousePos_PlaceTower()

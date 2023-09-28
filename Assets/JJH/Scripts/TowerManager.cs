@@ -74,6 +74,7 @@ public class TowerManager : MonoBehaviour
 
     public BaseTowerData GetTower(string TowerName) //find tower method
     {
+        
         for (int i = 0; i < rangerList.Count; i++)
         {
             var go = rangerList[i];

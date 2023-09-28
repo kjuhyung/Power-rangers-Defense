@@ -230,7 +230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63031db465c09cc45be68ab5c758853e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BTDalphaRanger: {fileID: 9218012710488755270, guid: e6ad5b81d9beb8c4c9a7a3f507ca2bdc, type: 3}
+  BTDalphaRanger: {fileID: 5294974718190694216, guid: e6ad5b81d9beb8c4c9a7a3f507ca2bdc, type: 3}
   BTDrealRanger: {fileID: 9218012710488755270}
 --- !u!114 &9218012710488755270
 MonoBehaviour:

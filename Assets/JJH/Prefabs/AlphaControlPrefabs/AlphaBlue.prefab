@@ -93,8 +93,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2564034300966812404}
-  - component: {fileID: 9218012710488755270}
   - component: {fileID: 862527452472864582}
+  - component: {fileID: 5294974718190694216}
   m_Layer: 0
   m_Name: AlphaBlue
   m_TagString: Untagged
@@ -118,20 +118,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9218012710488755270
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5522182389895385642}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39b4ea3a0e0bd4b4ca037ffe478b50a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Bullets: {fileID: 0}
-  bp: {fileID: 0}
 --- !u!61 &862527452472864582
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -177,3 +163,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &5294974718190694216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5522182389895385642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b145f4ebea14c91479a482ceb5f6db2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Bullets: {fileID: 0}
