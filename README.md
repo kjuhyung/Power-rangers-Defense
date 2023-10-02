@@ -89,7 +89,7 @@
 ## ✅ 기능 상세 설명 
 
 ### StartScene
-** 완성 후 스크린샷 
+![10 2 start scene](https://github.com/kjuhyung/Power-rangers-Defense/assets/141553708/0965c574-e2c9-4060-a750-520de89bab02)
 
 기능 설명 작성 - 예시 
 1. Start 버튼을 누르면 레벨 선택 화면으로 이동한다.
@@ -97,14 +97,14 @@
 <br/>
 
 ### SelectScene
-**완성 후 스크린샷
+![10 2 stage select scene](https://github.com/kjuhyung/Power-rangers-Defense/assets/141553708/a1da4467-4e60-4446-b328-f59377b6a0d8)
 
 기능 설명 작성
 
 <br/>
 
 ### MainScene
-**완성 후 스크린샷
+![10 2 Main Scene](https://github.com/kjuhyung/Power-rangers-Defense/assets/141553708/7a460794-c2a5-4e4b-a927-f1080fabd7f1)
 
 기능 설명 작성 
 
