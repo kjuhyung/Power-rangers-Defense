@@ -2781,7 +2781,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1827388352}
   m_Father: {fileID: 1979918586}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2797,8 +2798,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ab88af0d5e3ee14ca761ac253f8b3c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerGold: {fileID: 1319629305}
-  diaManager: {fileID: 0}
+  playerGold: {fileID: 0}
+  diaManager: {fileID: 1827388353}
   playerHP: {fileID: 852781431}
 --- !u!1001 &1276240714
 PrefabInstance:
@@ -3020,7 +3021,6 @@ GameObject:
   - component: {fileID: 1319629302}
   - component: {fileID: 1319629304}
   - component: {fileID: 1319629303}
-  - component: {fileID: 1319629305}
   m_Layer: 5
   m_Name: PlayerGold
   m_TagString: Untagged
@@ -3088,20 +3088,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1319629301}
   m_CullTransparentMesh: 1
---- !u!114 &1319629305
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1319629301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fe8ba3f9c5a544689cdea6e5ce16cb0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentGold: 0
-  goldText: {fileID: 8204516053031545308}
 --- !u!1001 &1323206662
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6508,6 +6494,52 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1827388351
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1827388352}
+  - component: {fileID: 1827388353}
+  m_Layer: 0
+  m_Name: DiaManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1827388352
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1827388351}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1269640206}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1827388353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1827388351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35530ebf35587497698c772529710ded, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  diaText: {fileID: 0}
+  currentDiamons: 0
 --- !u!1 &1836373893
 GameObject:
   m_ObjectHideFlags: 0

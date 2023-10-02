@@ -135,8 +135,7 @@ public class Monster : MonoBehaviour
 
         if (curHealth <= 0)
         {
-            CancelInvoke(nameof(MonsterGiveAttack));
-            _playerManager.playerGold.AddGold(goldPerDeath);
+            CancelInvoke(nameof(MonsterGiveAttack));            
             IsDeath = true;
             _anim.SetTrigger("Death");
         }
@@ -144,6 +143,7 @@ public class Monster : MonoBehaviour
 
     private void MonsterDestroy()
     {
+        _playerManager.playerGold.AddGold(goldPerDeath);
         gameObject.SetActive(false);
     }
 }

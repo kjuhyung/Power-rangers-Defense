@@ -2882,7 +2882,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ab88af0d5e3ee14ca761ac253f8b3c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerGold: {fileID: 1319629305}
+  playerGold: {fileID: 0}
   diaManager: {fileID: 1910665684}
   playerHP: {fileID: 852781431}
 --- !u!1 &1301037741
@@ -3031,7 +3031,6 @@ GameObject:
   - component: {fileID: 1319629302}
   - component: {fileID: 1319629304}
   - component: {fileID: 1319629303}
-  - component: {fileID: 1319629305}
   m_Layer: 5
   m_Name: PlayerGold
   m_TagString: Untagged
@@ -3099,20 +3098,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1319629301}
   m_CullTransparentMesh: 1
---- !u!114 &1319629305
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1319629301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fe8ba3f9c5a544689cdea6e5ce16cb0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentGold: 0
-  goldText: {fileID: 8204516053031545308}
 --- !u!1 &1399962797
 GameObject:
   m_ObjectHideFlags: 0
