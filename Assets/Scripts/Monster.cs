@@ -36,7 +36,6 @@ public class Monster : MonoBehaviour
     {
         IsDeath = false;
         IsAttacking = false;
-        curHealth = maxHealth;
 
         switch (monsterType)
         {
@@ -69,6 +68,7 @@ public class Monster : MonoBehaviour
                 goldPerDeath = 20;
                 break;
         }
+        curHealth = maxHealth;
     }
 
     private void FixedUpdate()
@@ -135,6 +135,7 @@ public class Monster : MonoBehaviour
 
         if (curHealth <= 0)
         {
+            CancelInvoke(nameof(MonsterGiveAttack));
             _playerManager.playerGold.AddGold(goldPerDeath);
             IsDeath = true;
             _anim.SetTrigger("Death");
