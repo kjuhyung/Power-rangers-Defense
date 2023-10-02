@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Monster : MonoBehaviour
 {
-    private enum MonsterType { Pink = 1, Owlet, Dude }
+    private enum MonsterType { Pink = 1, Owlet, Dude, Ghost}
     [SerializeField] private MonsterType monsterType;
 
     private Rigidbody2D _rigid;
@@ -36,7 +36,6 @@ public class Monster : MonoBehaviour
     {
         IsDeath = false;
         IsAttacking = false;
-        
 
         switch (monsterType)
         {
@@ -50,7 +49,7 @@ public class Monster : MonoBehaviour
             case MonsterType.Owlet:
                 maxHealth = 300f;
                 attackDamage = 15;
-                attackDelay = 2f;
+                attackDelay = 1.5f;
                 moveSpeed = 100f;
                 goldPerDeath = 15;
                 break;
@@ -61,8 +60,14 @@ public class Monster : MonoBehaviour
                 moveSpeed = 300f;
                 goldPerDeath = 10;
                 break;
+            case MonsterType.Ghost:
+                maxHealth = 400f;
+                attackDamage = 20f;
+                attackDelay = 2f;
+                moveSpeed = 150f;
+                goldPerDeath = 20;
+                break;
         }
-
         curHealth = maxHealth;
     }
 
@@ -90,8 +95,8 @@ public class Monster : MonoBehaviour
         if (other.tag == "Defender")
         {
             IsAttacking = true;
-            targetRangerName = other.gameObject.GetComponent<BaseTowerData>().GetTowerName();
-            //Debug.Log(targetRangerName);
+            targetRangerName = other.gameObject.GetComponent<BaseTowerData>().towerName;
+
             InvokeRepeating(nameof(MonsterGiveAttack), 0, attackDelay);
         }
         else if (other.tag == "Earth")
@@ -101,7 +106,6 @@ public class Monster : MonoBehaviour
         }       
         else return;            
     }
-
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.tag == "Defender")
@@ -116,11 +120,9 @@ public class Monster : MonoBehaviour
     private void MonsterGiveAttack()
     {
         var tower = TowerManager.Instance.GetTower(targetRangerName);
-        
         if (tower != null)
         {
             //tower.TowerDamaged(); TODO
-            tower.TowerDamaged(tower.towerName, attackDamage);
         }
         _anim.SetTrigger("Attack");        
     }
@@ -130,8 +132,10 @@ public class Monster : MonoBehaviour
     {
         curHealth -= _damage;
         _anim.SetTrigger("Hit");
+
         if (curHealth <= 0)
         {
+            CancelInvoke(nameof(MonsterGiveAttack));
             _playerManager.playerGold.AddGold(goldPerDeath);
             IsDeath = true;
             _anim.SetTrigger("Death");
