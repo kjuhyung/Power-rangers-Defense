@@ -36,7 +36,7 @@ public class Monster : MonoBehaviour
     {
         IsDeath = false;
         IsAttacking = false;
-        curHealth = maxHealth;
+        
 
         switch (monsterType)
         {
@@ -62,6 +62,8 @@ public class Monster : MonoBehaviour
                 goldPerDeath = 10;
                 break;
         }
+
+        curHealth = maxHealth;
     }
 
     private void FixedUpdate()

@@ -21,13 +21,6 @@ public class TowerMakeClick : MonoBehaviour
     private Ray ray;
     private RaycastHit hit;
 
-    public GameObject addTower;
-
-    void Awake()
-    {
-        Instance = this;
-    }
-
     void Start()
     {
         mainCam = Camera.main;
@@ -84,9 +77,11 @@ public class TowerMakeClick : MonoBehaviour
         }
         tile.isBuiltTower = true;
 
-        addTower = (GameObject)Instantiate(GOrealRanger, new Vector3(tileTransform.position.x, tileTransform.position.y + 0.3f, 0), Quaternion.identity);
+        
+        var ranger = Instantiate(GOrealRanger, new Vector3(tileTransform.position.x, tileTransform.position.y + 0.3f, 0), Quaternion.identity);
 
-
+        Destroy(ranger, 5f);
+        tile.isBuiltTower = false;
     }
 
     public void CalcMousePos_PlaceTower()
@@ -106,4 +101,3 @@ public class TowerMakeClick : MonoBehaviour
         }
     }
 }
-

@@ -41,10 +41,10 @@ public class TowerManager : MonoBehaviour
 
         //                    name, attValue, attDelay, hp, 
         redRanger.RedSetData("redRanger", 0f, 2f, 10f);
-        blueRanger.BlueSetData("blueRanger", 1f, 3f, 5f, 2f);
-        greenRanger.GreenSetData("greenRanger", 2f, 5f, 4f);
-        blackRanger.BlackSetData("blackRanger", 1f, 2f, 6f);
-        pinkRanger.PinkSetData("pinkRanger", 1f, 2f, 8f, 1f);
+        blueRanger.BlueSetData("blueRanger", 50f, 3f, 5f, 2f);
+        greenRanger.GreenSetData("greenRanger", 70f, 5f, 4f);
+        blackRanger.BlackSetData("blackRanger", 30f, 2f, 6f);
+        pinkRanger.PinkSetData("pinkRanger", 30f, 2f, 8f, 1f);
 
         rangerList.Add(redRanger.gameObject);
         rangerList.Add(blueRanger.gameObject);
@@ -64,12 +64,6 @@ public class TowerManager : MonoBehaviour
             Instantiate(rangerList[i], basePos, Quaternion.identity);
             basePos.x += 3.5f;
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     public BaseTowerData GetTower(string TowerName) //find tower method
@@ -92,11 +86,11 @@ public class TowerManager : MonoBehaviour
         for (int i = 0; i < rangerList.Count; i++)
         {
             var gameObj = rangerList[i];
-            Debug.Log(gameObj.name);
 
             if (gameObj.name + "Ranger" == towerName)
             {
-                Destroy(TowerMakeClick.Instance.addTower);
+                GameObject towerObj = gameObj.gameObject;
+                Destroy(towerObj);
             }
         }
     }

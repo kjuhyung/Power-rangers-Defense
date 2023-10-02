@@ -216,6 +216,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BTDalphaRanger: {fileID: -4421233549566825291, guid: e707fba164c9bd24f9535c9e43754616, type: 3}
   BTDrealRanger: {fileID: 484213524821723640}
+  addTower: {fileID: 0}
+  gobj: {fileID: 6162576022792986635, guid: b9057a647a62a9a4eb3f0045b69948c4, type: 3}
 --- !u!1 &3979789641495831888
 GameObject:
   m_ObjectHideFlags: 0

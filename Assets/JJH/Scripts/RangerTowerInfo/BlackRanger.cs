@@ -14,7 +14,7 @@ public class BlackRanger : BaseTowerData
 
     public override string GetTowerName()
     {
-        return TowerManager.Instance.blackRanger.towerName; // towerName 값을 반환
+        return towerName; // towerName 값을 반환
     }
 
     public override void Awake()
@@ -24,10 +24,10 @@ public class BlackRanger : BaseTowerData
 
     public void Update()
     {
-        //if (TowerAttck() == true && blackCor == null)
-        //{
-        //    anim.SetBool("isAttached", true);
-        //    blackCor = StartCoroutine(SpawnBullet(TowerManager.Instance.blackRanger, bp));
-        //}
+        if (TowerAttck() == true && blackCor == null)
+        {
+            anim.SetBool("isAttached", true);
+            blackCor = StartCoroutine(SpawnBullet(TowerManager.Instance.blackRanger, bp));
+        }
     }
 }

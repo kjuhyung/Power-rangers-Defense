@@ -94,6 +94,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BTDalphaRanger: {fileID: 6676814124812723747, guid: 579162055e450ed4c9d29228d404c6b8, type: 3}
   BTDrealRanger: {fileID: 2053276505305125004}
+  addTower: {fileID: 0}
+  gobj: {fileID: 6162576022792986635, guid: b9057a647a62a9a4eb3f0045b69948c4, type: 3}
 --- !u!114 &2053276505305125004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,6 +109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullets: {fileID: 1487092914298888498, guid: bc078c93caeeb044390a3eba34f42d5f, type: 3}
+  anim: {fileID: 0}
 --- !u!1 &3328542892355596412
 GameObject:
   m_ObjectHideFlags: 0

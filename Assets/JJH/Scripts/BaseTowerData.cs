@@ -53,7 +53,6 @@ public abstract class BaseTowerData : MonoBehaviour //이거를 붙혀도
 
         int layer = LayerMask.GetMask("Monster");
         RaycastHit2D hit = Physics2D.Raycast(rayOrigin, rayDirection, Mathf.Infinity , layer);
-
         
         if (hit.collider != null)
         {
