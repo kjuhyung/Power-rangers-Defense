@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
     {
         timeGauge.value = gameTime / maxGameTime;
         int sec = Mathf.FloorToInt(gameTime % 60);
-        timeText.text = string.Format("{0:D2} √ ", sec);
+        timeText.text = string.Format("{0:D2}", sec);
     }
 
     public void GameOver()
