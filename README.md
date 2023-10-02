@@ -8,7 +8,7 @@
 
 |이름|담당|깃허브 주소|
 |------|---|------|
-|김주형|팀장|[링크](https://github.com/kjuhyung)|
+|김주형|팀장(레드)|[링크](https://github.com/kjuhyung)|
 |김연우|팀원|[링크](https://github.com/kimyeonwoo1234)|
 |문준권|팀원|[링크](https://github.com/MoonJunkwon?tab=repositories)|
 |정재호|팀원|[링크](https://github.com/Jaero0)|
@@ -27,10 +27,12 @@
 <br/>
 
 ### [프로젝트 기획]
-- 와이어프레임
+- 와이어프레임 :
+[링크](https://miro.com/app/board/uXjVMhkLt0w=/?share_link_id=257604247295)
 
+<br/>
 
-**링크 넣기 
+![1](https://github.com/kjuhyung/Power-rangers-Defense/assets/141566906/547e5b99-1c56-4855-a814-6073044671b3)
 
 
 
@@ -45,8 +47,9 @@
 ### [게임 플레이 설명]
 1. 시작 버튼을 누른 뒤 스테이지를 선택한 후, 레인저들을 정해진 위치에 배치 해 적들이 지구에 닿지 않도록 타워를 세워 공격합니다.
 2. 파워레인저 타워는 골드를 이용해 세울 수 있으며, 골드는 게임 시작 시 1000이 기본으로 주어지고, 게임에서 적을 해치우면서 얻을 수 있습니다.
-3. 주어진 시간동안 적들을 막아내면 승리합니다. 만약 적이 지구에 도착한다면 주어진 5개의 목숨이 하나씩 사라지고 목숨을 모두 잃으면 패배합니다.
-4. 승리를 통해 얻게 된 다이아를 이용해 스테이지 선택 화면에서 파워레인저 타워의 기능을 강화 할 수 있습니다. 
+3. 파워레인저 타워는 8초간 유지됩니다. 8초 뒤 타워가 사라지면 골드를 이용해 다시 설치 할 수 있습니다. 
+4. 주어진 시간동안 적들을 막아내면 승리합니다. 만약 적이 지구에 도착한다면 주어진 5개의 목숨이 하나씩 사라지고 목숨을 모두 잃으면 패배합니다.
+5. 승리를 통해 얻게 된 다이아를 이용해 스테이지 선택 화면에서 파워레인저 타워의 기능을 강화 할 수 있습니다. (추후 업데이트 예정)
 <br/>
 
 ### [역할 분담]
@@ -71,7 +74,7 @@
 - 정재호 - 타워 :
         1. 적을 감지하고 일정 거리 안에 들어오면 공격
         2. 타워 타입에 따라 다른 행동
-        3.  체력, 공격력, 효과 등 속성
+        3. 체력, 공격력, 효과 등 속성
   
 - 함영주 - 플레이어 상태 :
         1. 플레이어 체력 표시
@@ -88,26 +91,31 @@
 
 ## ✅ 기능 상세 설명 
 
-### StartScene
-![10 2 start scene](https://github.com/kjuhyung/Power-rangers-Defense/assets/141553708/0965c574-e2c9-4060-a750-520de89bab02)
+### Start Scene
+![스크린샷 2023-10-02 오후 8 58 34](https://github.com/kjuhyung/Power-rangers-Defense/assets/141566906/665229e5-5143-47da-a628-89b95601bd2e)
 
-기능 설명 작성 - 예시 
+기능 설명 
 1. Start 버튼을 누르면 레벨 선택 화면으로 이동한다.
-2. 옵션 버튼을 누를 시 사운드와 해상도 조절이 가능하다. 
+2. 파티클
+3. 스타트 버튼 애니메이션 
+
 <br/>
 
-### SelectScene
+### Stage Scene
 ![10 2 stage select scene](https://github.com/kjuhyung/Power-rangers-Defense/assets/141553708/a1da4467-4e60-4446-b328-f59377b6a0d8)
 
-기능 설명 작성
+1. 게임 맵을 선택 할 수 있다.
+2. 옵션 버튼을 눌러 사운드를 조절 할 수 있다. 
 
 <br/>
 
 ### MainScene
-![10 2 Main Scene](https://github.com/kjuhyung/Power-rangers-Defense/assets/141553708/7a460794-c2a5-4e4b-a927-f1080fabd7f1)
+스테이지 1 
+![스크린샷 2023-10-02 오후 8 58 54](https://github.com/kjuhyung/Power-rangers-Defense/assets/141566906/18ea2840-8391-4e92-8fd7-ee718bc4747c)
+![스크린샷 2023-10-02 오후 9 01 44](https://github.com/kjuhyung/Power-rangers-Defense/assets/141566906/7ece0065-9db3-4cb8-ba71-e618787ccc92)
+![스크린샷 2023-10-02 오후 9 01 04](https://github.com/kjuhyung/Power-rangers-Defense/assets/141566906/c861e9e1-dcc6-4ada-860a-7f5d697be046)
 
-기능 설명 작성 
-
+1.
 
 <br/>
 
