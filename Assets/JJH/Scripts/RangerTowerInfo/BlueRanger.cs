@@ -6,7 +6,6 @@ public class BlueRanger : BaseTowerData
 {
     Coroutine blueCor;
     public GameObject bp;
-    Animator anim;
     public float slowTime { get; set; }
     public float slowRange { get; set; }
 
@@ -16,6 +15,23 @@ public class BlueRanger : BaseTowerData
         slowTime = _slowTime;
     }
 
+    public override string GetTowerName()
+    {
+        return TowerManager.Instance.blueRanger.towerName; // towerName 값을 반환
+    }
+
+    public override void Awake()
+    {
+        base.Awake();
+    }
+
+    public void Update()
+    {
+        if (TowerAttck() == true && blueCor == null)
+        {
+            blueCor = StartCoroutine(SpawnBullet(TowerManager.Instance.blueRanger, bp));
+        }
+    }
 
     public float CalcSlowRange(float towerAttValue)
     {
@@ -29,13 +45,5 @@ public class BlueRanger : BaseTowerData
         yield return new WaitForSeconds(slowTime);
 
 
-    }
-
-    public void Update()
-    {
-        if (TowerAttck() == true && blueCor == null)
-        {
-            blueCor = StartCoroutine(SpawnBullet(TowerManager.Instance.blueRanger, bp));
-        }
     }
 }

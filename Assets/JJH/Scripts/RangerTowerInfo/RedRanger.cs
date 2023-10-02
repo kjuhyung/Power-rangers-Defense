@@ -10,6 +10,11 @@ public class RedRanger : BaseTowerData
         base.SetData(_name, _att, _attDelay, _hp);
     }
 
+    public override string GetTowerName()
+    {
+        return TowerManager.Instance.redRanger.towerName; // towerName 값을 반환
+    }
+
     public float ReflexDamageCalc(float _enemyAttValue)
     {
         //todo

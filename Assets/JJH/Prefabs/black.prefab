@@ -118,7 +118,6 @@ GameObject:
   - component: {fileID: 9116961960445573590}
   - component: {fileID: 484213524821723640}
   - component: {fileID: -775395190999157911}
-  - component: {fileID: 978341275142312393}
   m_Layer: 0
   m_Name: black
   m_TagString: Defender
@@ -141,7 +140,7 @@ Transform:
   - {fileID: 1813260903297383439}
   - {fileID: 1896481745032565366}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &9116961960445573590
 BoxCollider2D:
@@ -201,6 +200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullets: {fileID: 478896186296371751, guid: 52567da6aaf7d8247941f9f661b1951c, type: 3}
+  anim: {fileID: 0}
   bp: {fileID: 3979789641495831888}
 --- !u!114 &-775395190999157911
 MonoBehaviour:
@@ -214,29 +214,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63031db465c09cc45be68ab5c758853e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BTDalphaRanger: {fileID: 484213524821723640, guid: e707fba164c9bd24f9535c9e43754616, type: 3}
+  BTDalphaRanger: {fileID: -4421233549566825291, guid: e707fba164c9bd24f9535c9e43754616, type: 3}
   BTDrealRanger: {fileID: 484213524821723640}
---- !u!95 &978341275142312393
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1901736291258664695}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c2660bf29ba754a4086b622917869455, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  addTower: {fileID: 0}
+  gobj: {fileID: 6162576022792986635, guid: b9057a647a62a9a4eb3f0045b69948c4, type: 3}
 --- !u!1 &3979789641495831888
 GameObject:
   m_ObjectHideFlags: 0

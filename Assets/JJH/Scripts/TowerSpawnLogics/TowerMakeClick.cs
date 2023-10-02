@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TowerMakeClick : MonoBehaviour
 {
+    public static TowerMakeClick Instance;
+
     private bool isClicked = false;
 
     public BaseTowerData BTDalphaRanger;
@@ -75,7 +77,11 @@ public class TowerMakeClick : MonoBehaviour
         }
         tile.isBuiltTower = true;
 
-        Instantiate(GOrealRanger, new Vector3(tileTransform.position.x, tileTransform.position.y + 1, 0), Quaternion.identity);
+        
+        var ranger = Instantiate(GOrealRanger, new Vector3(tileTransform.position.x, tileTransform.position.y + 0.3f, 0), Quaternion.identity);
+
+        Destroy(ranger, 5f);
+        tile.isBuiltTower = false;
     }
 
     public void CalcMousePos_PlaceTower()
@@ -95,4 +101,3 @@ public class TowerMakeClick : MonoBehaviour
         }
     }
 }
-

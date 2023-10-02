@@ -27,18 +27,18 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (bullet.transform.position.x > 15)
+        {
+            Destroy(bullet);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Monster")
         {
-            //monster.MosterTakeDamage(rangerTower.att);
-            //TODO 불렛 지나간거 destroy해주기
-            
-            //Destroy(bullet);
             Monster monster = other.gameObject.GetComponent<Monster>();
+            print(monster.curHealth);
             monster.MosterTakeDamage(rangerTower.att);
         }
     }

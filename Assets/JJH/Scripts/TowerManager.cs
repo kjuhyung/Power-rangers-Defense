@@ -40,11 +40,11 @@ public class TowerManager : MonoBehaviour
         rangerList = new List<GameObject>();
 
         //                    name, attValue, attDelay, hp, 
-        redRanger.RedSetData("RedRanger", 0f, 2f, 10f);
-        blueRanger.BlueSetData("BlueRanger", 1f, 3f, 5f, 2f);
-        greenRanger.GreenSetData("GreenRanger", 2f, 5f, 4f);
-        blackRanger.BlackSetData("BlackRanger", 1f, 2f, 6f);
-        pinkRanger.PinkSetData("PinkRanger", 1f, 2f, 8f, 1f);
+        redRanger.RedSetData("redRanger", 0f, 2f, 10f);
+        blueRanger.BlueSetData("blueRanger", 50f, 3f, 5f, 2f);
+        greenRanger.GreenSetData("greenRanger", 70f, 5f, 4f);
+        blackRanger.BlackSetData("blackRanger", 30f, 2f, 6f);
+        pinkRanger.PinkSetData("pinkRanger", 30f, 2f, 8f, 1f);
 
         rangerList.Add(redRanger.gameObject);
         rangerList.Add(blueRanger.gameObject);
@@ -66,23 +66,32 @@ public class TowerManager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public BaseTowerData GetTower(string TowerName) //find tower method
     {
         for (int i = 0; i < rangerList.Count; i++)
         {
-            var go = rangerList[i];
-            var tower = go.GetComponent<BaseTowerData>();
+            var gameObj = rangerList[i];
+            var tower = gameObj.GetComponent<BaseTowerData>();
+            
             if (tower.towerName == TowerName)
             {
                 return tower;
             }
         }
         return null;
+    }
+
+    public void DestroyRangerTower(string towerName)
+    {
+        for (int i = 0; i < rangerList.Count; i++)
+        {
+            var gameObj = rangerList[i];
+
+            if (gameObj.name + "Ranger" == towerName)
+            {
+                GameObject towerObj = gameObj.gameObject;
+                Destroy(towerObj);
+            }
+        }
     }
 }

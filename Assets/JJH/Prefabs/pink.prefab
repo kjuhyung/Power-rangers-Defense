@@ -230,8 +230,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63031db465c09cc45be68ab5c758853e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BTDalphaRanger: {fileID: 8240310746479933148, guid: 22188a31c9f00504fa8f25dc8018d04d, type: 3}
+  BTDalphaRanger: {fileID: 2842453846626358175, guid: 22188a31c9f00504fa8f25dc8018d04d, type: 3}
   BTDrealRanger: {fileID: 8240310746479933148}
+  addTower: {fileID: 0}
+  gobj: {fileID: 6162576022792986635, guid: b9057a647a62a9a4eb3f0045b69948c4, type: 3}
 --- !u!114 &8240310746479933148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,4 +247,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullets: {fileID: 7924877716056218264, guid: 99ecf86529db279419e384383423d7f3, type: 3}
+  anim: {fileID: 0}
   bp: {fileID: 5324591807678979155}
