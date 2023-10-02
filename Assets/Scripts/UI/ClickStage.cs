@@ -2,16 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static ClickStage;
 
 public class ClickStage : MonoBehaviour
 {
-    public string stageGame1;
-
     public string TowerManagement;
 
-    public void gameStart()
+    public void gameStart(int buildIndex)
     {
-        SceneManager.LoadScene(stageGame1);
+        SceneManager.LoadScene(buildIndex);
         Time.timeScale = 1f;
     }
 

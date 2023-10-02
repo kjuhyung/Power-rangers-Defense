@@ -12,9 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/StageScene.unity
     guid: 3e2e98176baed204fa1e2ba3fdd760ad
   - enabled: 1
-    path: Assets/JJH/JJH Scene/JJhMainScene1.unity
-    guid: e83393b99bc0b0e4ca69f33f07304be5
-  - enabled: 1
     path: Assets/Scenes/MainScene1.unity
     guid: 643a2ea44032301448befc7ad3788faa
   - enabled: 1

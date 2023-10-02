@@ -80,7 +80,7 @@ public class TowerMakeClick : MonoBehaviour
         
         var ranger = Instantiate(GOrealRanger, new Vector3(tileTransform.position.x, tileTransform.position.y + 0.3f, 0), Quaternion.identity);
 
-        Destroy(ranger, 5f);
+        Destroy(ranger, 8f);
         tile.isBuiltTower = false;
     }
 

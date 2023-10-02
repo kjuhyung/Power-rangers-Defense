@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
     {
         gameOverPanel.SetActive(true);
         winPanel.SetActive(true);
-        // _playerManager.diaManager.StageCleared(500);
+        _playerManager.diaManager.StageCleared(500);
     }
 
     public void OnClickRestartBtn()

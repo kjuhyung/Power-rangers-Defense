@@ -36,7 +36,15 @@ public class Paused : MonoBehaviour
     }
     public void ReGame()
     {
-        SceneManager.LoadScene(gameScene);
+        switch(SceneManager.GetActiveScene().buildIndex)
+        {
+            case 2:
+                SceneManager.LoadScene(2);
+                break;
+            case 3:
+                SceneManager.LoadScene(3);
+                break;
+        }
         Time.timeScale = 1f;
     }
     public void PauseResume()

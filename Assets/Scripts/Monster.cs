@@ -61,7 +61,7 @@ public class Monster : MonoBehaviour
                 goldPerDeath = 10;
                 break;
             case MonsterType.Ghost:
-                maxHealth = 400f;
+                maxHealth = 250f;
                 attackDamage = 20f;
                 attackDelay = 2f;
                 moveSpeed = 150f;

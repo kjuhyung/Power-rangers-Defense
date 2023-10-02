@@ -40,6 +40,4 @@ public class PlayerManager : MonoBehaviour
         diaManager = FindObjectOfType<DiaManager>();
         playerHP = FindObjectOfType<PlayerHP>();
     }
-
-
 }
