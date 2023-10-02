@@ -5314,6 +5314,7 @@ MonoBehaviour:
   - {fileID: 6548805055194836044, guid: 1ed82868077fabb459b924b582a9b4ca, type: 3}
   - {fileID: 3784579401848805998, guid: bb6bbb307f2cb96458ee77548e2ae37e, type: 3}
   - {fileID: 2375054809466012426, guid: 18dba49b858c4e34b80fcf0c3e58ec9b, type: 3}
+  - {fileID: 498952852607944416, guid: 290f0ae7681a4db42a81c7e154640dfb, type: 3}
   MonsterPool: {fileID: 1620185402}
 --- !u!1 &1902197611
 GameObject:
@@ -6851,9 +6852,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameTime: 0
   maxGameTime: 30
-  flagGoal1: {fileID: 1698559039}
-  flagGoal2: {fileID: 1581863683}
-  finalGoal: {fileID: 2093102607}
   timeGauge: {fileID: 548169786}
   gameOverPanel: {fileID: 560547107}
   losePanel: {fileID: 209122606}
