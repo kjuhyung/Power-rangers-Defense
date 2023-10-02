@@ -1,42 +1,39 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using System;
 
 public class DiaManager : MonoBehaviour
 {
     public TMP_Text diaText;
 
-    public int currentDiamons = 0;// 현재 다이아 양
+    private int currentDiamons;
 
     void Start()
-    {
-        LoadDiamonds();
-        UpdateDiaUI();
+    {       
+        LoadDiamonds();        
     }
 
-    public void StageCleared(int reward)
-    {
-        currentDiamons += reward;
-        SaveDiamons();
-        UpdateDiaUI();
-    }
-
-    void UpdateDiaUI()
+    private void LateUpdate()
     {
         diaText.text = ($"{currentDiamons}");
     }
 
-    void SaveDiamons()
+    public void StageCleared(int reward)
     {
-        PlayerPrefs.SetInt("Diamonds", currentDiamons);
+        int amount = currentDiamons + reward;
+        SaveDiamons(amount);        
+    }
+
+    void SaveDiamons(int amount)
+    {
+        PlayerPrefs.SetInt("Diamonds", amount);
         PlayerPrefs.Save();
+
+        LoadDiamonds();
     }
 
     void LoadDiamonds()
     {
-        currentDiamons = PlayerPrefs.GetInt("Diamonds", 0);
+        currentDiamons = PlayerPrefs.GetInt("Diamonds");
     }
 
 }
