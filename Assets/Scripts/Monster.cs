@@ -26,17 +26,10 @@ public class Monster : MonoBehaviour
     {
         _rigid = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
+        _playerManager = PlayerManager.Instance;
     }
     private void OnEnable()
     {
-        _playerManager = PlayerManager.Instance;
-    }
-
-    private void Start()
-    {
-        IsDeath = false;
-        IsAttacking = false;
-
         switch (monsterType)
         {
             case MonsterType.Pink:
@@ -68,15 +61,13 @@ public class Monster : MonoBehaviour
                 goldPerDeath = 20;
                 break;
         }
+
         curHealth = maxHealth;
+        IsDeath = false;
+        IsAttacking = false;
     }
 
     private void FixedUpdate()
-    {
-        MonsterMove();     
-    }
-
-    private void MonsterMove()
     {
         if (IsDeath || IsAttacking)
         {

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TowerMakeClick : MonoBehaviour
@@ -77,12 +75,18 @@ public class TowerMakeClick : MonoBehaviour
         }
         tile.isBuiltTower = true;
 
-        
-        var ranger = Instantiate(GOrealRanger, new Vector3(tileTransform.position.x, tileTransform.position.y + 0.3f, 0), Quaternion.identity);
+        if (PlayerManager.Instance.playerGold.currentGold >= 100)
+        {
+            var ranger = Instantiate(GOrealRanger, new Vector3(tileTransform.position.x, tileTransform.position.y + 0.3f, 0), Quaternion.identity);
+            Destroy(ranger, 8f);
+            int amount = 100;
+            PlayerManager.Instance.playerGold.AddGold(-amount);
 
-        Destroy(ranger, 8f);
-        int amount = 100;
-        PlayerManager.Instance.playerGold.AddGold(-amount);
+        }
+        else
+        {
+            return;
+        }
         tile.isBuiltTower = false;
     }
 

@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -9,6 +10,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public float gameTime;
     [HideInInspector] public float maxGameTime;
     [SerializeField] private Slider timeGauge;
+    [SerializeField] private TMP_Text timeText;
 
     [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private GameObject losePanel;
@@ -19,6 +21,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        _playerManager = PlayerManager.Instance;
     }
 
     private void Start()
@@ -42,6 +45,8 @@ public class GameManager : MonoBehaviour
     private void LateUpdate()
     {
         timeGauge.value = gameTime / maxGameTime;
+        int sec = Mathf.FloorToInt(gameTime % 60);
+        timeText.text = string.Format("{0:D2} √ ", sec);
     }
 
     public void GameOver()
