@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Monster : MonoBehaviour
 {
-    private enum MonsterType { Pink = 1, Owlet, Dude }
+    private enum MonsterType { Pink = 1, Owlet, Dude, Ghost}
     [SerializeField] private MonsterType monsterType;
 
     private Rigidbody2D _rigid;
@@ -50,7 +50,7 @@ public class Monster : MonoBehaviour
             case MonsterType.Owlet:
                 maxHealth = 300f;
                 attackDamage = 15;
-                attackDelay = 2f;
+                attackDelay = 1.5f;
                 moveSpeed = 100f;
                 goldPerDeath = 15;
                 break;
@@ -60,6 +60,13 @@ public class Monster : MonoBehaviour
                 attackDelay = 0.5f;
                 moveSpeed = 300f;
                 goldPerDeath = 10;
+                break;
+            case MonsterType.Ghost:
+                maxHealth = 400f;
+                attackDamage = 20f;
+                attackDelay = 2f;
+                moveSpeed = 150f;
+                goldPerDeath = 20;
                 break;
         }
     }
