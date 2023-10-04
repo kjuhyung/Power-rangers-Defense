@@ -95,16 +95,16 @@
 ![스크린샷 2023-10-02 오후 8 58 34](https://github.com/kjuhyung/Power-rangers-Defense/assets/141566906/665229e5-5143-47da-a628-89b95601bd2e)
 
 기능 설명 
-1. Start 버튼을 누르면 레벨 선택 화면으로 이동한다.
-2. 배경음악, 상단 이펙트(파티클), 애니메이션
+1. Start 버튼을 누르면 레벨 선택 화면으로 이동합니다.
+2. 배경음악, 상단 이펙트(파티클), 애니메이션이 있습니다.
 
 <br/>
 
 ### Stage Scene
 ![10 2 stage select scene](https://github.com/kjuhyung/Power-rangers-Defense/assets/141553708/a1da4467-4e60-4446-b328-f59377b6a0d8)
 
-1. 게임 맵을 선택 할 수 있다.
-2. 옵션 버튼을 눌러 사운드를 조절 할 수 있다. 
+1. 게임 맵을 선택 할 수 있습니다. ( 현재 1, 2 )
+2. 옵션 버튼을 눌러 사운드를 조절 할 수 있습니다.
 
 <br/>
 
@@ -113,13 +113,13 @@
 ![스크린샷 2023-10-02 오후 8 58 54](https://github.com/kjuhyung/Power-rangers-Defense/assets/141566906/18ea2840-8391-4e92-8fd7-ee718bc4747c)
 ![스크린샷 2023-10-02 오후 9 01 44](https://github.com/kjuhyung/Power-rangers-Defense/assets/141566906/7ece0065-9db3-4cb8-ba71-e618787ccc92)
 ![스크린샷 2023-10-02 오후 9 01 04](https://github.com/kjuhyung/Power-rangers-Defense/assets/141566906/c861e9e1-dcc6-4ada-860a-7f5d697be046)
+![10 4 option](https://github.com/kjuhyung/Power-rangers-Defense/assets/141553708/233f48de-c1dc-4c04-9ed0-af275861e721)
+
 
 1. 상,중,하단 에서 랜덤으로 몬스터가 나옵니다.
-2. 몬스터가 지구에 도달하면 왼쪽 상단 player hp 가 감소합니다.
-3. 하단의 타워들을 적절한 위치에 배치해서 몬스터들을 막거나 공격할 수 있습니다.
-4. 타워는 배치할 때 마다 골드가 감소하고 8초간 유지되었다가 사라집니다.
-5. 시간이 지날수록 몬스터가 나오는 주기가 짧아집니다.
-6. 30초를 버티면 승리, hp 5개가 모두 감소하면 패배가 됩니다.
+2. 하단의 타워들을 마우스 드래그&드롭으로 원하는 곳에 배치할 수 있습니다.
+3. 키보드 Esc 키를 눌러서 게임을 일시정지 및 UI 를 볼 수 있습니다.
+4. 각 버튼을 눌러 진행, 다시하기, 옵션, 메인메뉴(돌아가기) 를 할 수 있습니다.
 
 <br/>
 
